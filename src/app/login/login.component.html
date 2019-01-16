@@ -1,0 +1,43 @@
+<h1 class="wew fadeInUp " data-wew-delay="1s ">
+  <span>Login</span>
+</h1>
+
+
+<!--inner content start-->
+<div class="main-content">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-3"></div>
+      <div class="col-sm-6">
+        <form class="login-form" name="loginForm">
+          <div class="md-block">
+            <label>Username</label>&nbsp;
+            <input required name="userName" ng-model="login.userName">
+          </div>
+          <br>
+
+          <div class="md-block">
+            <label>Password</label>&nbsp;&nbsp;
+            <input required type="password" name="password" ng-model="login.password">
+          </div>
+
+          <br>
+          <div class="md-block">
+            <input type="checkbox" name="tos" ng-model="login.tos" required>
+              Remember me
+          </div>
+
+          <div>
+            <br>
+            <div style="text-align: center"><button class="login-btn" type="submit" style="width: 60px">Login</button></div>
+            <p class="text-center"> --------- OR --------</p>
+            <a href="#" class="facebook-login-btn"><i class="fa fa-facebook"></i> Login with Facebook</a>
+            <a href="#" class="google-login-btn"><i class="fa fa-google"></i> Login with Google</a>
+          </div>
+        </form>
+      </div>
+      <div class="col-sm-3"></div>
+    </div>
+  </div>
+</div>
+

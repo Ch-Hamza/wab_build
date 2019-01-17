@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import * as data from '../../assets/contenu.json';
+
+//import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-publication',
@@ -6,8 +9,35 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./publication.component.scss']
 })
 export class PublicationComponent implements OnInit {
+  /*date;
+  description;
+  lien_pdf;
+  getDetails(id) {
+  
+    const details = data['publications'].filter(detail => {
+      if (detail.id == id) {
+        this.date = detail.date;
+        this.description = detail.description;
+        this.lien_pdf= detail.lien_pdf;
+        
+      }
+    });
+  }*/
 
-  constructor() { }
+
+  publications;
+  constructor() {
+    this.publications = data['publications'];
+
+
+    let compteurAnnee = 0;
+    this.publications.map(
+      (a) => {
+        compteurAnnee++;
+        a.verif = compteurAnnee % 4 ? false : true;
+        return a;
+      });
+  }
 
   ngOnInit() {
   }

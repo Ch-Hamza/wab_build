@@ -8,253 +8,28 @@
   <div class="container margin-b-60">
 
     <div class="row  margin-t-60 margin-b-60">
-      <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-        <div class="icon-box dgn-5">
-          <h4>
-            <i class="fa fa-folder-o"></i> 25/12/2017</h4>
-          <p>Dispositions fiscales prévues suite à la promulgation de la loi de finances pour la gestion 2018
-          </p>
-          <br>
-          <a href="Publications/PDF1.pdf" target="_blank">
-            <span class="read-more">charger le PDF
-              <i class="fa fa-angle-right"></i>
-            </span>
-          </a>
+      <ng-container *ngFor="let publication of publications">
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+          <div class="icon-box dgn-5">
+            <h4>
+              <i class="fa fa-folder-o"></i> {{publication.date}}</h4>
+            <p>{{publication.description}}
+            </p>
+            <br>
+            <a href="{{publication.lien_pdf}}" target="_blank">
+              <span class="read-more">charger le PDF
+                <i class="fa fa-angle-right"></i>
+              </span>
+            </a>
+          </div>
+
         </div>
 
-      </div>
-      <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-        <div class="icon-box dgn-5">
-          <h4>
-            <i class="fa fa-folder-o"></i> 25/04/2017</h4>
-          <p>Nouvelles incitations fiscales et financières en Tunisie
-          </p>
-          <br>
-          <br>
-          <a href="#">
-            <span class="read-more">charger le PDF
-              <i class="fa fa-angle-right"></i>
-            </span>
-          </a>
+        <div *ngIf="publication.verif">
+
+          <hr width="90%" color="midnightblue" size="3" style="margin-left:50px">
         </div>
-
-      </div>
-      <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-        <div class="icon-box dgn-5">
-          <h4>
-            <i class="fa fa-folder-o"></i>29/12/2016</h4>
-          <p>Incidences fiscales de la LF2017 sur les PP et les PM en Tunisie
-          </p>
-          <br>
-          <br>
-          <a href="#">
-            <span class="read-more">charger le PDF
-              <i class="fa fa-angle-right"></i>
-            </span>
-          </a>
-        </div>
-
-      </div>
-      <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-        <div class="icon-box dgn-5">
-          <h4>
-            <i class="fa fa-folder-o"></i> 20/08/2013</h4>
-          <p>Choix de la forme juridique de l'entreprise
-          </p>
-          <br>
-          <br>
-          <a href="#">
-            <span class="read-more">charger le PDF
-              <i class="fa fa-angle-right"></i>
-            </span>
-          </a>
-        </div>
-
-      </div>
-      <hr width="90%" color="midnightblue" size="3" style="margin-left:50px">
-    </div>
-    <div class="row  margin-t-60 margin-b-60">
-      <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-        <div class="icon-box dgn-5">
-          <h4>
-            <i class="fa fa-folder-o"></i> 23/07/2013</h4>
-          <p>Création d’entreprise : profil de l’entrepreneur et idée de projet
-          </p>
-          <br>
-          <a href="#">
-            <span class="read-more">charger le PDF
-              <i class="fa fa-angle-right"></i>
-            </span>
-          </a>
-        </div>
-
-      </div>
-      <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-        <div class="icon-box dgn-5">
-          <h4>
-            <i class="fa fa-folder-o"></i> 14/06/2013</h4>
-          <p>Obligation de désignationN d'un commissaire aux comptes
-          </p>
-          <br>
-
-          <a href="#">
-            <span class="read-more">charger le PDF
-              <i class="fa fa-angle-right"></i>
-            </span>
-          </a>
-        </div>
-
-      </div>
-      <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-        <div class="icon-box dgn-5">
-          <h4>
-            <i class="fa fa-folder-o"></i>15/03/2011</h4>
-          <p>Modification du champ d’application de la retenue à la source exigible sur les aqcuisitions du secteur PRIVE
-          </p>
-          <a href="#">
-            <span class="read-more">charger le PDF
-              <i class="fa fa-angle-right"></i>
-            </span>
-          </a>
-        </div>
-
-      </div>
-      <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-        <div class="icon-box dgn-5">
-          <h4>
-            <i class="fa fa-folder-o"></i> 04/02/2011</h4>
-          <p>Dématerialisation de certaines obligations fiscales
-          </p>
-          <br>
-          <a href="#">
-            <span class="read-more">charger le PDF
-              <i class="fa fa-angle-right"></i>
-            </span>
-          </a>
-        </div>
-
-      </div>
-      <hr width="90%" color="midnightblue" size="3" style="margin-left:50px">
-    </div>
-
-    <div class="row  margin-t-60 margin-b-60">
-      <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-        <div class="icon-box dgn-5">
-          <h4>
-            <i class="fa fa-folder-o"></i> 12/01/2010</h4>
-          <p>L’étude de marché : définition et processus d'élaboration
-          </p>
-
-          <a href="#">
-            <span class="read-more">charger le PDF
-              <i class="fa fa-angle-right"></i>
-            </span>
-          </a>
-        </div>
-
-      </div>
-      <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-        <div class="icon-box dgn-5">
-          <h4>
-            <i class="fa fa-folder-o"></i> 01/01/1970</h4>
-          <p>Nouvelles incitations fiscales et financières en Tunisie
-          </p>
-          <a href="#">
-            <span class="read-more">charger le PDF
-              <i class="fa fa-angle-right"></i>
-            </span>
-          </a>
-        </div>
-
-      </div>
-      <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-        <div class="icon-box dgn-5">
-          <h4>
-            <i class="fa fa-folder-o"></i> 01/01/1970</h4>
-          <p>Nouvelles incitations fiscales et financières en Tunisie
-          </p>
-          <a href="#">
-            <span class="read-more">charger le PDF
-              <i class="fa fa-angle-right"></i>
-            </span>
-          </a>
-        </div>
-
-      </div>
-      <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-        <div class="icon-box dgn-5">
-          <h4>
-            <i class="fa fa-folder-o"></i> 01/01/1970</h4>
-          <p>Nouvelles incitations fiscales et financières en Tunisie
-          </p>
-          <a href="#">
-            <span class="read-more">charger le PDF
-              <i class="fa fa-angle-right"></i>
-            </span>
-          </a>
-        </div>
-
-      </div>
-      <hr width="90%" color="midnightblue" size="3" style="margin-left:50px">
-    </div>
-    <div class="row  margin-t-60 margin-b-60">
-      <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-        <div class="icon-box dgn-5">
-          <h4>
-            <i class="fa fa-folder-o"></i> 01/01/1970</h4>
-          <p>Nouvelles incitations fiscales et financières en Tunisie
-          </p>
-          <a href="Publications/PDF1.pdf" target="_blank">
-            <span class="read-more">charger le PDF
-              <i class="fa fa-angle-right"></i>
-            </span>
-          </a>
-        </div>
-
-      </div>
-      <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-        <div class="icon-box dgn-5">
-          <h4>
-            <i class="fa fa-folder-o"></i> 01/01/1970</h4>
-          <p>Nouvelles incitations fiscales et financières en Tunisie
-          </p>
-          <a href="#">
-            <span class="read-more">charger le PDF
-              <i class="fa fa-angle-right"></i>
-            </span>
-          </a>
-        </div>
-
-      </div>
-      <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-        <div class="icon-box dgn-5">
-          <h4>
-            <i class="fa fa-folder-o"></i>01/01/1970</h4>
-          <p>Nouvelles incitations fiscales et financières en Tunisie
-          </p>
-          <a href="#">
-            <span class="read-more">charger le PDF
-              <i class="fa fa-angle-right"></i>
-            </span>
-          </a>
-        </div>
-
-      </div>
-      <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-        <div class="icon-box dgn-5">
-          <h4>
-            <i class="fa fa-folder-o"></i> 01/01/1970</h4>
-          <p>Nouvelles incitations fiscales et financières en Tunisie
-          </p>
-          <a href="#">
-            <span class="read-more">charger le PDF
-              <i class="fa fa-angle-right"></i>
-            </span>
-          </a>
-        </div>
-
-      </div>
-      <hr width="90%" color="midnightblue" size="3" style="margin-left:50px">
+      </ng-container>
     </div>
 
 

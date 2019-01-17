@@ -1,7 +1,8 @@
-import { Component , OnInit ,OnDestroy} from '@angular/core';
-import {Subscription } from 'rxjs';
-import { Router , NavigationEnd } from '@angular/router';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { Router, NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs/Operators';
+
 
 
 @Component({
@@ -9,22 +10,22 @@ import { filter } from 'rxjs/Operators';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit , OnDestroy {
+export class AppComponent implements OnInit, OnDestroy {
   title = 'projet-cabinetWAB';
 
-  subscription: Subscription ;
-  constructor(private router: Router){}
-  ngOnInit(){
-this.subscription=this.router.events
-.pipe(
-  filter(event =>event instanceof NavigationEnd)
+  subscription: Subscription;
+  constructor(private router: Router) { }
+  ngOnInit() {
+    this.subscription = this.router.events
+      .pipe(
+        filter(event => event instanceof NavigationEnd)
 
-)
-.subscribe(()=>window.scrollTo(0,0)) ;
+      )
+      .subscribe(() => window.scrollTo(0, 0));
   }
-  ngOnDestroy(){
+  ngOnDestroy() {
     this.subscription.unsubscribe();
   }
-  
+
 
 }

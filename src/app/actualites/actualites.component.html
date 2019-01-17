@@ -12,75 +12,25 @@
         <!-- Blog List start -->
         <div class="blog-container">
             <ul class="row blog-grid-show">
-                <li class="col-md-4 col-sm-6">
+                <li class="col-md-4 col-sm-6" *ngFor="let actualite of actualites">
                     <div class="blog-inter">
                         <div class="postimg"> <img class="actual" src="../../assets/images/1.jpg" alt="Blog Title"></div>
                         <div class="post-grid-desc">
                             <div class="blog-post-heading">
-                                <h4><a routerLink="actualite1" >Ce qui reste pour la loi sur les startups</a></h4>
-                                <div class="post-info-meta">Date: <span>10/05/2015</span></div>
+                                <h4><a [routerLink]="actualite.id" >{{actualite.titre}}</a></h4>
+                                <div class="post-info-meta">Date: <span>{{actualite.date}}</span></div>
                             </div>
                             <div class="post-info-meta">
-                                <p>Ce qui reste pour la loi sur les startups...</p>
-                                <a routerLink="actualite1" class="btn-style-1 size-small light-skin uppercase corner-rounded">Suite</a>
+                                <p>{{actualite.titre}}</p>
+                                <a [routerLink]="actualite.id" class="btn-style-1 size-small light-skin uppercase corner-rounded">Suite</a>
                             </div>
                         </div>
                     </div>
                 </li>
-                <li class="col-md-4 col-sm-6">
-                    <div class="blog-inter">
-                        <div class="postimg"> <img class="actual" src="../../assets/images/2.jpg" alt="Blog Title"></div>
-                        <div class="post-grid-desc">
-                            <div class="blog-post-heading">
-                                <h4><a href="#">Dispositions fiscales prévues suite à la promulgation de la loi de finances pour la gestion 2018</a></h4>
-                                <div class="post-info-meta">Date: <span>27/12/2017</span></div>
-                            </div>
-                            <div class="post-info-meta">
-                                <p>Dispositions fiscales prévues suite à la promulgation de la loi de finances pour la gestion 2018...</p>
-                                <a href="#" class="btn-style-1 size-small light-skin uppercase corner-rounded">Suite</a>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li class="col-md-4 col-sm-6">
-                    <div class="blog-inter">
-                        <div class="postimg"> <img class="actual" src="../../assets/images/3.jpg" alt="Blog Title"></div>
-                        <div class="post-grid-desc">
-                            <div class="blog-post-heading">
-                                <h4><a href="#">PRINCIPALES DISPOSITIONS PRÉVUES PAR LA LOI DE FINANCES POUR LA GESTION 2015</a></h4>
-                                <div class="post-info-meta">Date: <span>08/01/2015</span> </div>
-                            </div>
-                            <div class="post-info-meta">
-                                <p>La loi n° 2014 - 59 du 26 décembre 2014, portant loi de finances pour l'année 2015, a prévu les principales dispositions suivantes ...</p>
-                                <a href="#" class="btn-style-1 size-small light-skin uppercase corner-rounded">Suite</a>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li class="col-md-4 col-sm-6">
-                    <div class="blog-inter">
-                        <div class="postimg"> <img class="actual" src="../../assets/images/aboutme.jpg" alt="Blog Title"></div>
-                        <div class="post-grid-desc">
-                            <div class="blog-post-heading">
-                                <h4><a href="#">Morbi in diam eu augue ullamcorper</a></h4>
-                                <div class="post-info-meta">Date: <span>7 Aug</span></div>
-                            </div>
-                            <div class="post-info-meta">
-                                <p>Suspendisse at felis turpis. Sed vitae ultricies nulla. Pellentesque est nisl, imperdiet vulputate...</p>
-                                <a href="#" class="btn-style-1 size-small light-skin uppercase corner-rounded">Suite</a>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-
-
-
-
-
-            </ul>
+                            </ul>
 
             <!-- Pagination -->
-            <div class="pagination-container">
+        <!--   <div class="pagination-container">
                 <div class="row">
                     <div class="col-md-4 col-sm-6">
                         <div class="showreslt">Showing 1-10</div>
@@ -98,7 +48,7 @@
                         </ul>
                     </div>
                 </div>
-            </div>
+            </div>-->
         </div>
 
     </div>

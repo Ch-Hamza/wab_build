@@ -13,7 +13,7 @@ const routes: Routes = [
   { path: 'cabinet', component: CabinetComponent },
   { path: '', component: AccueilComponent },
   { path: 'actualites', component: ActualitesComponent },
-  { path: 'actualites/actualite1', component: ActualiteComponent },
+  { path: 'actualites/:id', component: ActualiteComponent },
   { path: 'services', component: ServicesComponent },
   { path: 'login', component: LoginComponent },
   { path: 'publication', component: PublicationComponent },

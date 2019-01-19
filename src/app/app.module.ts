@@ -1,6 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import{MDBBootstrapModule} from 'angular-bootstrap-md';
+//import {NgxImageZoomModule} from 'ngx-image-zoom';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ActualiteComponent } from './actualite/actualite.component';
@@ -14,6 +17,7 @@ import { LoginComponent } from './login/login.component';
 import { PublicationComponent } from './publication/publication.component';
 import { ContactComponent } from './contact/contact.component';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,8 +35,12 @@ import { FormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule , 
+    MDBBootstrapModule.forRoot()
+   // NgxImageZoomModule.forRoot()
   ],
+ // schemas : [NO_ERRORS_SCHEMA],
   providers: [],
   bootstrap: [AppComponent]
 })

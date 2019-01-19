@@ -216,7 +216,7 @@ function bigCarousel() {
         });
 
     })(jQuery);
-}
+} 
 
 //Home Page Slider
 

@@ -6,16 +6,18 @@ import {HttpClient} from '@angular/common/http';
   providedIn: 'root'
 })
 export class DataService {
-
-  constructor(private Http : HttpClient) { }
-
-  
-getData(url) : any {
+actualites;
+  constructor(private Http: HttpClient) { }
+getData(url): any {
   return this.Http.get(url);
 }
 
+getActualites() {
+    return this.Http.get('http://localhost/Back/actualite.php');
+    }
 
-getPhoto (url):any {
+
+getPhoto (url): any {
   return this.Http.get(url);
 }
 }

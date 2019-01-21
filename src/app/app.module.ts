@@ -18,6 +18,8 @@ import { PublicationComponent } from './publication/publication.component';
 import { ContactComponent } from './contact/contact.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import {DataService} from './data.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,7 +43,7 @@ import { HttpClientModule } from '@angular/common/http';
    // NgxImageZoomModule.forRoot()
   ],
  // schemas : [NO_ERRORS_SCHEMA],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

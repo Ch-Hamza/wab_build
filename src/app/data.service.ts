@@ -16,6 +16,11 @@ getActualites() {
     return this.Http.get('http://localhost/Back/actualite.php');
     }
 
+isLogged(data :any){
+  return this.Http.post('http://localhost/Back/login.php',data);
+
+}
+
 
 getPhoto (url): any {
   return this.Http.get(url);

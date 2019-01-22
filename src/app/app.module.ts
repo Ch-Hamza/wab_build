@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {StorageServiceModule} from 'angular-webstorage-service';
 
 import{MDBBootstrapModule} from 'angular-bootstrap-md';
 //import {NgxImageZoomModule} from 'ngx-image-zoom';
@@ -16,7 +17,8 @@ import { AccueilComponent } from './accueil/accueil.component';
 import { LoginComponent } from './login/login.component';
 import { PublicationComponent } from './publication/publication.component';
 import { ContactComponent } from './contact/contact.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule ,ReactiveFormsModule} from '@angular/forms';
+
 import { HttpClientModule } from '@angular/common/http';
 import {DataService} from './data.service';
 
@@ -39,6 +41,8 @@ import {DataService} from './data.service';
     AppRoutingModule,
     FormsModule,
     HttpClientModule , 
+    ReactiveFormsModule,
+    StorageServiceModule,
     MDBBootstrapModule.forRoot()
    // NgxImageZoomModule.forRoot()
   ],

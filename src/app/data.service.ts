@@ -15,6 +15,10 @@ getData(url): any {
 getActualites() {
     return this.Http.get('http://localhost/Back/actualite.php');
     }
+getActualite(id) {
+      console.log(id);
+        return this.Http.get('http://localhost/Back/get_actulite_by_id.php?id=' + id);
+    }
 
 
 getPhoto (url): any {

@@ -22,6 +22,10 @@
             <a class="login-popup md-primary md-raised" routerLink="/admin" flex-sm="100" flex-md="100" flex-gt-md="auto">
               <i class="fa fa-user" aria-hidden="true"></i>Espace Admin</a>
           </li>
+          <li>
+            <a class="login-popup md-primary md-raised" flex-sm="100" flex-md="100" flex-gt-md="auto">
+              <i aria-hidden="true"></i>Logout</a>
+          </li>
         </ul>
       </div>
     </div>
@@ -37,7 +41,7 @@
     <div class="row">
       <div class="col-md-3 col-sm-3 col-xs-12">
         <div class="logo">
-          <a routerLink="/">
+          <a routerLink="/" (click)="Site()">
             <img src="../../assets/images/wob.png">
           </a>
         </div>

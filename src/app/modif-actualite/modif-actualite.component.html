@@ -1,0 +1,72 @@
+<!--inner header start
+<div class="main-heading">
+    <div class="container">
+        <h3>Icon Boxs</h3>
+    </div>
+</div>
+inner header end-->
+<br>
+<br>
+<h1 class="wew fadeInUp " data-wew-delay="1s ">
+  <span>Modifier Actualités</span>
+</h1>
+
+<div>
+  <ul class="nav nav-tabs">
+    <li id="button1"><a (click)="formOff()"><strong>Liste acutalités</strong></a></li>
+    <li id="button2"><a (click)="formOn()"><strong>Ajouter actualité</strong></a></li>
+  </ul>
+</div>
+<!----------------   Affichage Historique commence ici   --------------->
+<div id="liste" *ngIf="!formOnOff">
+  <table class="table table-bordered table-hover" >
+
+    <tr class="active ">
+      <th >Id actualité</th>
+      <th >titre </th>
+      <th >Date d'admission</th>
+      <th >contenu</th>
+    </tr>
+
+  </table>
+</div>
+<!----------------   fin Tableau   --------------->
+
+<!----------------   Formulaire Ajout actualité commence ici  --------------->
+<div id="Form" *ngIf="formOnOff">
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <form class="form-horizontal" method="post" action="ajoutPatient.php">
+
+        <div class="form-group">
+          <label  class="col-sm-4 control-label">titre</label>
+          <div class="col-sm-4">
+            <input type="text" class="form-control" name="titre" placeholder="titre" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label  class="col-sm-4 control-label">Date d'admission</label>
+          <div class="col-sm-4">
+            <input type="date" class="form-control" name="dh" placeholder="Date d'admission" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label  class="col-sm-4 control-label">contenu</label>
+          <div class="col-sm-4">
+            <input type="text" class="form-control" name="contenu" placeholder="contenu" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="col-sm-offset-4 col-sm-10">
+            <button type="submit" name="ok" class="btn btn-primary">Ajouter actualité</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<!----------------   fin Formulaire   --------------->
+

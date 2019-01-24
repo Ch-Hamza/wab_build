@@ -1,4 +1,5 @@
-<app-header></app-header>
+<app-header *ngIf="!EspaceAdmin"></app-header>
+<app-header-admin *ngIf="EspaceAdmin"></app-header-admin>
 <router-outlet></router-outlet>
 <app-footer></app-footer>
 

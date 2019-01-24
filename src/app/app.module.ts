@@ -21,6 +21,10 @@ import { FormsModule ,ReactiveFormsModule} from '@angular/forms';
 
 import { HttpClientModule } from '@angular/common/http';
 import {DataService} from './data.service';
+import { ModifActualiteComponent } from './modif-actualite/modif-actualite.component';
+import { ModifPublicationComponent } from './modif-publication/modif-publication.component';
+import { ModifContactUsComponent } from './modif-contact-us/modif-contact-us.component';
+import { HeaderAdminComponent } from './header-admin/header-admin.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +38,11 @@ import {DataService} from './data.service';
     AccueilComponent,
     LoginComponent,
     PublicationComponent,
-    ContactComponent
+    ContactComponent,
+    ModifActualiteComponent,
+    ModifPublicationComponent,
+    ModifContactUsComponent,
+    HeaderAdminComponent
   ],
   imports: [
     BrowserModule,

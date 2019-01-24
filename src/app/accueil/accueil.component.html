@@ -78,12 +78,12 @@
                         <div class="postimg"> <img class="actual" src="../../assets/images/1.jpg" alt="Blog Title"></div>
                         <div class="post-grid-desc">
                             <div class="blog-post-heading">
-                                <h4><a [routerLink]="actualite.id" >{{actualite.titre}}</a></h4>
+                                <h4><a [routerLink]="'actualites/'+actualite.id" >{{actualite.titre}}</a></h4>
                                 <div class="post-info-meta">Date: <span>{{actualite.datee}}</span></div>
                             </div>
                             <div class="post-info-meta">
                                 <p>{{actualite.titre}}</p>
-                                <a [routerLink]="actualite.id" class="btn-style-1 size-small light-skin uppercase corner-rounded">Suite</a>
+                                <a [routerLink]="'actualites/'+actualite.id" class="btn-style-1 size-small light-skin uppercase corner-rounded">Suite</a>
                             </div>
                         </div>
                     </div>

@@ -14,9 +14,10 @@ import * as $ from 'jquery';
 })
 export class AppComponent implements OnInit, OnDestroy {
   title = 'projet-cabinetWAB';
-
+  EspaceAdmin = false;
   subscription: Subscription;
-  constructor(private router: Router) { }
+  constructor(private router: Router) {
+  }
   ngOnInit() {
     this.subscription = this.router.events
       .pipe(

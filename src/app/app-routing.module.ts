@@ -8,6 +8,9 @@ import { ServicesComponent } from './services/services.component';
 import { PublicationComponent } from './publication/publication.component';
 import { ContactComponent } from './contact/contact.component';
 import { LoginComponent } from './login/login.component';
+import {ModifActualiteComponent} from './modif-actualite/modif-actualite.component';
+import {ModifPublicationComponent} from './modif-publication/modif-publication.component';
+import {ModifContactUsComponent} from './modif-contact-us/modif-contact-us.component';
 const routes: Routes = [
 
   { path: 'cabinet', component: CabinetComponent },
@@ -17,7 +20,11 @@ const routes: Routes = [
   { path: 'services', component: ServicesComponent },
   { path: 'login', component: LoginComponent },
   { path: 'publication', component: PublicationComponent },
-  { path: 'contact', component: ContactComponent }
+  { path: 'contact', component: ContactComponent },
+  { path: 'admin', component: ModifActualiteComponent },
+  { path: 'pub', component: ModifPublicationComponent },
+  { path: 'modifcontact', component: ModifContactUsComponent }
+
 
 
 

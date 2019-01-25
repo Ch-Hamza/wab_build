@@ -7,12 +7,17 @@ import {AppComponent} from '../app.component';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-Adminn= true;
-  constructor(private app:AppComponent) { }
+Adminn;
+  constructor(private app:AppComponent) {
+  }
 
   ngOnInit() {
   }
 Admin(){
     this.app.EspaceAdmin=true;
     }
+logout(){
+      this.app.Adminn=false;
+      localStorage.clear();
+}
 }

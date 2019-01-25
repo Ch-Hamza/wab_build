@@ -13,10 +13,15 @@ import * as $ from 'jquery';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit, OnDestroy {
+  Adminn;
   title = 'projet-cabinetWAB';
   EspaceAdmin = false;
   subscription: Subscription;
   constructor(private router: Router) {
+      if(localStorage.getItem('name')){
+          this.Adminn=true;
+      }
+      else{this.Adminn=false;}
   }
   ngOnInit() {
     this.subscription = this.router.events

@@ -51,7 +51,7 @@ export class LoginComponent implements OnInit {
     }
 
     this.success = true;
-this.data.username=this.login.username ;
+this.data.username=this.login.username;
 this.data.password=this.login.password;
 
 console.log(this.data);
@@ -61,10 +61,11 @@ this.dataserv.isLogged(this.data).subscribe(
     console.log(res);
     console.log(res.success);
     if (res.success==true){
+        this.app.Adminn=true;
    localStorage.setItem('name',this.data.password);
   console.log("test");
   console.log(localStorage.getItem('name'));
-this.router.navigate(['/cabinet'])    
+this.router.navigate(['/cabinet']) ;
 }
     else alert ('eeeeeeeey');
     

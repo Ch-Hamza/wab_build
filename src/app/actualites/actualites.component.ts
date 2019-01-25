@@ -2,6 +2,7 @@ import {
   Component,
   OnInit
 } from '@angular/core';
+import {AppComponent} from '../app.component';
 import * as data from '../../assets/contenu.json';
 import {
   Router
@@ -20,7 +21,8 @@ import {
 })
 export class ActualitesComponent implements OnInit {
   actualites;
-  constructor(private router: Router, private dataService: DataService) {
+  constructor(private router: Router, private dataService: DataService,private app:AppComponent) {
+    app.EspaceAdmin=false;
     this.dataService.getActualites().subscribe(res => {
       this.actualites = res;
       console.log(this.actualites);

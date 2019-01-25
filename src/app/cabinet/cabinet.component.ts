@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {DataService} from '../data.service';
 import {Observable} from 'rxjs';
-
+import {AppComponent} from '../app.component';
 
 
 @Component({
@@ -11,7 +11,8 @@ import {Observable} from 'rxjs';
 })
 export class CabinetComponent implements OnInit {
 $photos : Object;
-  constructor(private dataserv : DataService) {
+  constructor(private dataserv : DataService,private app:AppComponent) {
+      app.EspaceAdmin=false;
  this.dataserv.getPhoto("https://jsonplaceholder.typicode.com/photos").subscribe(
 (data : any) => {this.$photos = data ;
   console.log(this.$photos); }

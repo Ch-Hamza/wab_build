@@ -1,6 +1,7 @@
 import { Component, OnInit, Injectable } from '@angular/core';
 import { Validators, FormControl, FormGroup, FormBuilder } from '@angular/forms';
 import{Router} from '@angular/router';
+import {AppComponent} from '../app.component';
 import {
   DataService
 } from '../data.service';
@@ -28,8 +29,8 @@ export class LoginComponent implements OnInit {
   success = false;
   messageForm: FormGroup;
 
-  constructor(private formBuilder: FormBuilder , private dataserv : DataService , private router : Router) { 
-  
+  constructor(private formBuilder: FormBuilder , private dataserv : DataService , private router : Router,private app:AppComponent) {
+  app.EspaceAdmin=false;
   }
   
 

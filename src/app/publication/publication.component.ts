@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as data from '../../assets/contenu.json';
+import {AppComponent} from '../app.component';
 
 //import { ActivatedRoute } from '@angular/router';
 
@@ -26,7 +27,8 @@ export class PublicationComponent implements OnInit {
 
 
   publications;
-  constructor() {
+  constructor(private app:AppComponent) {
+      app.EspaceAdmin=false;
     this.publications = data['publications'];
 
 

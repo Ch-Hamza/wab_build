@@ -5,6 +5,7 @@ import {
 import {
   DataService
 } from '../data.service';
+import {AppComponent} from '../app.component';
 import {
   Observable
 } from 'rxjs';
@@ -18,8 +19,8 @@ export class AccueilComponent implements OnInit {
   $posts: any[] = [];
   $actual: any[] = [];
   actualites :any[]=[];
-  constructor(private dataserv: DataService) {
-  
+  constructor(private dataserv: DataService,private app:AppComponent) {
+  app.EspaceAdmin=false;
 
 
     this.dataserv.getData('https://jsonplaceholder.typicode.com/posts').subscribe( //url back 

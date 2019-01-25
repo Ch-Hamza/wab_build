@@ -7,7 +7,6 @@ import {AppComponent} from '../app.component';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-Adminn;
   constructor(private app:AppComponent) {
   }
 

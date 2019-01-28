@@ -82,7 +82,7 @@
                                 <div class="post-info-meta">Date: <span>{{actualite.datee}}</span></div>
                             </div>
                             <div class="post-info-meta">
-                                <p>{{actualite.titre}}</p>
+                                <p style="width: auto;overflow: hidden;text-overflow: ellipsis">{{actualite.contenu}}</p>
                                 <a [routerLink]="'actualites/'+actualite.id" class="btn-style-1 size-small light-skin uppercase corner-rounded">Suite</a>
                             </div>
                         </div>

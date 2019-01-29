@@ -34,15 +34,16 @@ export class PublicationComponent implements OnInit {
     //this.publications = data['publications'];
     this.dataService.getPublications().subscribe(res => {
       this.publications = res;
+      let compteurAnnee = 0;
+      this.publications.map(
+        (a) => {
+          compteurAnnee++;
+          a.verif = compteurAnnee % 4 ? false : true;
+          return a;
+        });
       console.log(this.publications);
     });
-    let compteurAnnee = 0;
-    this.publications.map(
-      (a) => {
-        compteurAnnee++;
-        a.verif = compteurAnnee % 4 ? false : true;
-        return a;
-      });
+
   }
 
   ngOnInit() {

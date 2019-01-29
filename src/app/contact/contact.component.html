@@ -125,30 +125,11 @@
                   </div>
                 </form>
               </div>
-              <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-              <script>
-                $(document).ready(function () {
-                  $("#contact-form").on("submit", function (e) {
-                    e.preventDefault();
-
-
-                    if (($("#contact-form [name='firstName']").val() !== '') && ($("#contact-form [name='email']").val() !== '')) {
-                      var sendData = $(this).serialize();
-                      $.ajax({
-                        type: "POST",
-                        url: "get_responseContact.php",
-                        data: sendData,
-                        success: function (data) {
-                          $("#loading-img").css("display", "none");
-                          $(".response_msg").text(data);
-                          $(".response_msg").slideDown().fadeOut(3000);
-                          $("#contact-form").find("input[type=text], input[type=email], textarea").val("");
-                        }
-                      });
-                    }
-                  });
-                });
-              </script>
+              <!--
+              <div *ngif="test" class="alert alert-success">
+                <strong>Success!</strong> Indicates a successful or positive action.
+              </div>
+              -->
             </div>
             <h3 style="padding-left:50px;padding-top:30px" class="wew fadeInUp" data-wew-delay="0.2s">
               Ou bien suivez-nous sur :

@@ -68,9 +68,10 @@
 
 
               <div class="wew fadeInUp" data-wew-delay="0.2s">
-                <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate style="width:60%;">
+                <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate style="width:60%;" action="" method="post"
+                  id="contact-form">
                   <div class="form-group">
-                    <label for="firstName">Nom</label>
+                    <label for="firstName">Prénom</label>
                     <input type="text" class="form-control" name="firstName" [(ngModel)]="model.firstName" #firstName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && firstName.invalid }"
                       required />
                     <div *ngIf="f.submitted && firstName.invalid" class="invalid-feedback">
@@ -78,7 +79,7 @@
                     </div>
                   </div>
                   <div class="form-group">
-                    <label for="lastName">Prénom</label>
+                    <label for="lastName">Nom</label>
                     <input type="text" class="form-control" name="lastName" [(ngModel)]="model.lastName" #lastName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && lastName.invalid }"
                       required />
                     <div *ngIf="f.submitted && lastName.invalid" class="invalid-feedback">
@@ -120,11 +121,34 @@
                     </div>
                   </div>
                   <div class="form-group">
-                    <button class="btn btn-danger btn-lg" style="margin-left:300px;padding-left:20px;padding-right:20px;background-color:#ed1c23d3">Envoyer</button>
+                    <button type="submit" name="submit" value="Submit" id="submit_form" class="btn btn-danger btn-lg" style="margin-left:300px;padding-left:20px;padding-right:20px;background-color:#ed1c23d3">Envoyer</button>
                   </div>
                 </form>
               </div>
+              <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+              <script>
+                $(document).ready(function () {
+                  $("#contact-form").on("submit", function (e) {
+                    e.preventDefault();
 
+
+                    if (($("#contact-form [name='firstName']").val() !== '') && ($("#contact-form [name='email']").val() !== '')) {
+                      var sendData = $(this).serialize();
+                      $.ajax({
+                        type: "POST",
+                        url: "get_responseContact.php",
+                        data: sendData,
+                        success: function (data) {
+                          $("#loading-img").css("display", "none");
+                          $(".response_msg").text(data);
+                          $(".response_msg").slideDown().fadeOut(3000);
+                          $("#contact-form").find("input[type=text], input[type=email], textarea").val("");
+                        }
+                      });
+                    }
+                  });
+                });
+              </script>
             </div>
             <h3 style="padding-left:50px;padding-top:30px" class="wew fadeInUp" data-wew-delay="0.2s">
               Ou bien suivez-nous sur :

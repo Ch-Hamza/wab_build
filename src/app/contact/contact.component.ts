@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {AppComponent} from '../app.component';
+import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-contact',
@@ -13,8 +13,8 @@ export class ContactComponent implements OnInit {
 
     alert('votre message est envoyé\n\n merci pour votre interet \n\n')
   }
-  constructor(private app:AppComponent) {
-    app.EspaceAdmin=false;
+  constructor(private app: AppComponent) {
+    app.EspaceAdmin = false;
   }
 
   ngOnInit() {

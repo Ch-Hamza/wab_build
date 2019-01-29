@@ -16,7 +16,7 @@
             <p>{{publication.description}}
             </p>
             <br>
-            <a href="{{publication.lien_pdf}}" target="_blank">
+            <a [routerLink]="publication.id" target="_blank">
               <span class="read-more">charger le PDF
                 <i class="fa fa-angle-right"></i>
               </span>

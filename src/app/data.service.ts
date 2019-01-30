@@ -40,6 +40,12 @@ export class DataService {
     let headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded')
     return this.Http.post<string>('http://localhost/Back/get_responseContact.php', body.toString(), { headers, responseType: "text" as 'json' });
   }
+  addNewsletter(obj) {
+    let body = new URLSearchParams();
+    body.set('email', obj.email);
+    let headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded')
+    return this.Http.post<string>('http://localhost/Back/addNewsletter.php', body.toString(), { headers, responseType: "text" as 'json' });
+  }
 
   isLogged(data: any) {
     return this.Http.post('http://localhost/Back/login.php', data);

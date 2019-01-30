@@ -77,11 +77,21 @@
         <h2>Inscription Newsletter</h2>
         <p class="heading-description"></p>
         <div class="newsletter-form">
-          <form class="home-newsletter" action="../../assets/back/Newsletter-signup.php" method="post">
+          <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate class="home-newsletter" id="newsletter-form"
+            action="" method="post">
             <div class="newsletter-container">
               <i class="fa fa-envelope-o"></i>
-              <input type="email" name="email" id="email" placeholder="Entrez votre adresse EMAIL..." required>
-              <input type="submit" name="submit" id="submmit" value="S'inscire">
+              <div class="form-group">
+                <input type="email" name="email" class="form-control" [(ngModel)]="model.email" #email="ngModel" id="email" placeholder="Entrez votre adresse EMAIL..."
+                  [ngClass]="{ 'is-invalid': f.submitted && email.invalid }" required email>
+                <div *ngIf="f.submitted && email.invalid" class="invalid-feedback">
+                  <div *ngIf="email.errors.required" style="color:#ed1c24">Ce champ est obligatoire</div>
+                  <div *ngIf="email.errors.email" style="color:#ed1c24">email invalide</div>
+                </div>
+              </div>
+              <div class="form-group">
+                <input type="submit" name="submit" id="submmit" value="S'inscire">
+              </div>
             </div>
           </form>
         </div>

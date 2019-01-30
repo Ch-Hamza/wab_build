@@ -19,7 +19,7 @@ import {
   styleUrls: ['./modifier-une-publication.component.scss']
 })
 export class ModifierUnePublicationComponent implements OnInit {
-  publication = new publication();
+  
   model = new publication();
   constructor(private router: Router, private dataService: DataService,private app:AppComponent, private activatedRoute: ActivatedRoute) { 
     app.EspaceAdmin=true;
@@ -30,12 +30,8 @@ export class ModifierUnePublicationComponent implements OnInit {
     let id = this.activatedRoute.snapshot.params['id'];
    console.log(id);
    this.dataService.getPublication(id).subscribe(res => {
-       this.publication = res[0];
-       console.log(this.publication); 
-      this.model.id = this.publication.id; 
-       this.model.titre=this.publication.titre; 
-       this.model.date=this.publication.date; 
-       this.model.lien=this.publication.lien; 
+       this.model = res[0];
+       console.log(this.model);  
    });
   }
   modifierPublication(){

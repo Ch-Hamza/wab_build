@@ -34,8 +34,8 @@ export class ModifierUnePublicationComponent implements OnInit {
        console.log(this.publication); 
       this.model.id = this.publication.id; 
        this.model.titre=this.publication.titre; 
-       this.model.datee=this.publication.datee; 
-       this.model.urll=this.publication.urll; 
+       this.model.date=this.publication.date; 
+       this.model.lien=this.publication.lien; 
    });
   }
   modifierPublication(){

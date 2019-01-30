@@ -25,6 +25,8 @@ import { ModifActualiteComponent } from './modif-actualite/modif-actualite.compo
 import { ModifPublicationComponent } from './modif-publication/modif-publication.component';
 import { ModifContactUsComponent } from './modif-contact-us/modif-contact-us.component';
 import { HeaderAdminComponent } from './header-admin/header-admin.component';
+import { ModifierUnePublicationComponent } from './modifier-une-publication/modifier-une-publication.component';
+import { ModifierUneActualiteComponent } from './modifier-une-actualite/modifier-une-actualite.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,9 @@ import { HeaderAdminComponent } from './header-admin/header-admin.component';
     ModifActualiteComponent,
     ModifPublicationComponent,
     ModifContactUsComponent,
-    HeaderAdminComponent
+    HeaderAdminComponent,
+    ModifierUnePublicationComponent,
+    ModifierUneActualiteComponent
   ],
   imports: [
     BrowserModule,

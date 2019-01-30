@@ -24,9 +24,7 @@ import {DataService} from './data.service';
 import { ModifActualiteComponent } from './modif-actualite/modif-actualite.component';
 import { ModifPublicationComponent } from './modif-publication/modif-publication.component';
 import { ModifContactUsComponent } from './modif-contact-us/modif-contact-us.component';
-import { HeaderAdminComponent } from './header-admin/header-admin.component';
-import { ModifierUnePublicationComponent } from './modifier-une-publication/modifier-une-publication.component';
-import { ModifierUneActualiteComponent } from './modifier-une-actualite/modifier-une-actualite.component';
+import { HeaderAdminComponent } from './header-admin/header-admin.component'; 
 
 @NgModule({
   declarations: [
@@ -44,9 +42,7 @@ import { ModifierUneActualiteComponent } from './modifier-une-actualite/modifier
     ModifActualiteComponent,
     ModifPublicationComponent,
     ModifContactUsComponent,
-    HeaderAdminComponent,
-    ModifierUnePublicationComponent,
-    ModifierUneActualiteComponent
+    HeaderAdminComponent 
   ],
   imports: [
     BrowserModule,

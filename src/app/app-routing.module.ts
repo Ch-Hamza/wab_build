@@ -11,7 +11,9 @@ import { LoginComponent } from './login/login.component';
 import {ModifActualiteComponent} from './modif-actualite/modif-actualite.component';
 import {ModifPublicationComponent} from './modif-publication/modif-publication.component';
 import {ModifContactUsComponent} from './modif-contact-us/modif-contact-us.component';
-import {BoiteDeReceptionComponent} from './boite-de-reception/boite-de-reception.component';
+import {BoiteDeReceptionComponent} from './boite-de-reception/boite-de-reception.component'; 
+import {ModifierUnePublicationComponent} from './modifier-une-publication/modifier-une-publication.component';
+import {ModifierUneActualiteComponent} from './modifier-une-actualite/modifier-une-actualite.component';
 const routes: Routes = [
 
   { path: 'cabinet', component: CabinetComponent },
@@ -25,7 +27,9 @@ const routes: Routes = [
   { path: 'admin', component: ModifActualiteComponent },
   { path: 'pub', component: ModifPublicationComponent },
   { path: 'boite', component: BoiteDeReceptionComponent },
-  { path: 'modifcontact', component: ModifContactUsComponent }
+  { path: 'modifcontact', component: ModifContactUsComponent },
+  { path: 'publication/:id', component: ModifierUnePublicationComponent },
+  { path: 'actualite/:id', component: ModifierUneActualiteComponent }
 
 
 

@@ -57,4 +57,29 @@ export class DataService {
   getPhoto(url): any {
     return this.Http.get(url);
   }
+ 
+  
+  ajouterPublication(info){
+    return this.Http.post("http://localhost/Back/ajouterPublication.php",info);
+  }
+  
+  
+  modifierPublication(info) { 
+      return this.Http.post("http://localhost/Back/modifierPublication.php", info);
+  }
+  
+  supprimerPublication(id){
+    return this.Http.post("http://localhost/Back/supprimerPublication.php/",{'id':id})
+  }
+  
+   
+  ajouterActualite(info){
+    return this.Http.post("http://localhost/Back/ajouterActualite.php",info);
+  }
+  modifierActualite(info) { 
+    return this.Http.post("http://localhost/Back/modifierActualite.php", info);
+  }
+  supprimerActualite(id){
+    return this.Http.post("http://localhost/Back/supprimerActualite.php/",{'id':id})
+  }
 }

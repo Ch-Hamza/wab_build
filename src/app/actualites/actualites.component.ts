@@ -30,7 +30,8 @@ export class ActualitesComponent implements OnInit {
         if(res[0]['COUNT(id)']%6==0){
          this.n= res[0]['COUNT(id)']/6;}
         else
-          {this.n= parseInt((res[0]['COUNT(id)']/6)+1);
+          {this.n= (res[0]['COUNT(id)']/6)+1;
+          this.n=parseInt(this.n);
               console.log(this.n);}
         if(this.n>5){
           this.nb=5;}

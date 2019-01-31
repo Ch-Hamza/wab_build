@@ -5,7 +5,7 @@ $crud= new Crud();
 $id=$_GET['id'];
 
 
-$query="SELECT id,titre,datee,urll FROM publication where id='$id'";
+$query="SELECT id,titre,datee,contenu FROM actualite where id='$id'";
         $data=$crud->getData($query);
 
          echo json_encode($data);

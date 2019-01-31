@@ -34,9 +34,9 @@
                 <div class="row">
                     <div class="col-md-8 col-sm-6" style="text-align: center">
                         <ul class="pagination">
-                            <li><a (click)="getact(1)"><<</a></li>
+                            <li *ngIf="this.n>1"><a (click)="getact(1)"><<</a></li>
                             <li *ngFor="let page of pages" class="active"><a (click)="getact(page)">{{page}}</a></li>
-                            <li><a (click)="getact(n)">>></a></li>
+                            <li *ngIf="this.n>1"><a (click)="getact(n)">>></a></li>
                         </ul>
                     </div>
                 </div>

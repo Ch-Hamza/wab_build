@@ -82,4 +82,14 @@ export class DataService {
   supprimerActualite(id){
     return this.Http.post("http://localhost/Back/supprimerActualite.php/",{'id':id})
   }
+
+  getInfoContact(id){
+    return this.Http.get('http://localhost/Back/infocontact.php?id=' + id); 
+  }
+  modifierInfoContact(info){
+    return this.Http.post("http://localhost/Back/modifierInfoContact.php", info);
+  }
+  getMessages() {
+    return this.Http.get('http://localhost/Back/messages.php');
+  }
 }

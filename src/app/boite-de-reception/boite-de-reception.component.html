@@ -16,12 +16,24 @@ inner header end-->
   <table class="table table-bordered table-hover" >
 
     <tr class="active ">
-      <th >Nom</th>
+      <th >nom</th>
       <th >prenom</th>
       <th >telephone</th>
       <th >email</th>
       <th >sujet</th>
       <th >message</th>
+      <th >action</th>
+    </tr>
+    <tr *ngFor="let message of messages">
+      <td>{{message.id}}</td>
+      <td>{{message.prenom}}</td>
+      <td>{{message.telephone}}</td>
+      <td>{{message.email}}</td>
+      <td>{{message.sujet}}</td>
+      <td>{{message.messagee}}</td>
+      <td width=275> 
+          <a class="btn btn-info"  >Detail</a>  
+      </td>
     </tr>
 
   </table>

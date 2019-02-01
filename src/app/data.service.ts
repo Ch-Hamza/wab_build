@@ -14,10 +14,15 @@ export class DataService {
   getData(url): any {
     return this.Http.get(url);
   }
-
   getActualites() {
-    return this.Http.get('http://localhost/Back/actualite.php');
+        return this.Http.get('http://localhost/Back/actualite.php');
+    }
+  getActualitespage(i) {
+    return this.Http.get('http://localhost/Back/actualitepage.php?i=' + i);
   }
+  getActualitesnum() {
+        return this.Http.get('http://localhost/Back/actualitenum.php');
+    }
   getActualite(id) {
     console.log(id);
     return this.Http.get('http://localhost/Back/get_actulite_by_id.php?id=' + id);

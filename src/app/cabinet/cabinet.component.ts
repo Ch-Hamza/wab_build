@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {DataService} from '../data.service';
-import {Observable} from 'rxjs';
+import {Observable, from} from 'rxjs';
 import {AppComponent} from '../app.component';
+import { log } from 'util';
+import { ImageCroppedEvent } from 'ngx-image-cropper';
 
 
 @Component({
@@ -11,8 +13,11 @@ import {AppComponent} from '../app.component';
 })
 export class CabinetComponent implements OnInit {
 $photos : Object;
-  constructor(private dataserv : DataService,private app:AppComponent) {
+imageDialogVisible = false ;
+private bodyText: string;
+  constructor(private dataserv : DataService,private app:AppComponent ) {
       app.EspaceAdmin=false;
+     
  this.dataserv.getPhoto("https://jsonplaceholder.typicode.com/photos").subscribe(
 (data : any) => {this.$photos = data ;
   console.log(this.$photos); }
@@ -24,7 +29,8 @@ $photos : Object;
 
    }
 
-  ngOnInit() {
-  }
+   ngOnInit() {
+   
+}
 
 }

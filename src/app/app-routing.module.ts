@@ -12,6 +12,8 @@ import {ModifActualiteComponent} from './modif-actualite/modif-actualite.compone
 import {ModifPublicationComponent} from './modif-publication/modif-publication.component';
 import {ModifContactUsComponent} from './modif-contact-us/modif-contact-us.component';
 import {BoiteDeReceptionComponent} from './boite-de-reception/boite-de-reception.component';
+import { from } from 'rxjs';
+import { GardServiceService } from './gard-service.service';
 const routes: Routes = [
 
   { path: 'cabinet', component: CabinetComponent },
@@ -23,9 +25,10 @@ const routes: Routes = [
   { path: 'publication', component: PublicationComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'admin', component: ModifActualiteComponent },
-  { path: 'pub', component: ModifPublicationComponent },
+  { path: 'pub', component: ModifPublicationComponent /*, canActivate : [GardServiceService] */},
   { path: 'boite', component: BoiteDeReceptionComponent },
-  { path: 'modifcontact', component: ModifContactUsComponent }
+  { path: 'modifcontact', component: ModifContactUsComponent },
+  {path :'**' ,redirectTo:''}
 
 
 

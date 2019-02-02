@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { getLocaleDateFormat } from '@angular/common';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+
+
 
 @Injectable({
   providedIn: 'root'
@@ -12,10 +14,15 @@ export class DataService {
   getData(url): any {
     return this.Http.get(url);
   }
-
   getActualites() {
-    return this.Http.get('http://localhost/Back/actualite.php');
+        return this.Http.get('http://localhost/Back/actualite.php');
+    }
+  getActualitespage(i) {
+    return this.Http.get('http://localhost/Back/actualitepage.php?i=' + i);
   }
+  getActualitesnum() {
+        return this.Http.get('http://localhost/Back/actualitenum.php');
+    }
   getActualite(id) {
     console.log(id);
     return this.Http.get('http://localhost/Back/get_actulite_by_id.php?id=' + id);
@@ -27,6 +34,24 @@ export class DataService {
     console.log(id);
     return this.Http.get('http://localhost/Back/get_pub_by_id.php?id=' + id);
   }
+  addMessage(obj) {
+
+    let body = new URLSearchParams();
+    body.set('lastName', obj.lastName);
+    body.set('firstName', obj.firstName);
+    body.set('phone', obj.phone);
+    body.set('email', obj.email);
+    body.set('subject', obj.subject);
+    body.set('message', obj.message);
+    let headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded')
+    return this.Http.post<string>('http://localhost/Back/get_responseContact.php', body.toString(), { headers, responseType: "text" as 'json' });
+  }
+  addNewsletter(obj) {
+    let body = new URLSearchParams();
+    body.set('email', obj.email);
+    let headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded')
+    return this.Http.post<string>('http://localhost/Back/addNewsletter.php', body.toString(), { headers, responseType: "text" as 'json' });
+  }
 
   isLogged(data: any) {
     return this.Http.post('http://localhost/Back/login.php', data);
@@ -36,5 +61,30 @@ export class DataService {
 
   getPhoto(url): any {
     return this.Http.get(url);
+  }
+ 
+  
+  ajouterPublication(info){
+    return this.Http.post("http://localhost/Back/ajouterPublication.php",info);
+  }
+  
+  
+  modifierPublication(info) { 
+      return this.Http.post("http://localhost/Back/modifierPublication.php", info);
+  }
+  
+  supprimerPublication(id){
+    return this.Http.post("http://localhost/Back/supprimerPublication.php/",{'id':id})
+  }
+  
+   
+  ajouterActualite(info){
+    return this.Http.post("http://localhost/Back/ajouterActualite.php",info);
+  }
+  modifierActualite(info) { 
+    return this.Http.post("http://localhost/Back/modifierActualite.php", info);
+  }
+  supprimerActualite(id){
+    return this.Http.post("http://localhost/Back/supprimerActualite.php/",{'id':id})
   }
 }

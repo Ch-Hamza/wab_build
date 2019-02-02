@@ -27,36 +27,48 @@ inner header end-->
       <th >titre </th>
       <th >Date d'admission</th>
       <th >fichier</th>
+      <th >action</th>
     </tr>
 
+    <tr *ngFor="let publication of publications">
+      <td>{{publication.id}}</td>
+      <td>{{publication.titre}}</td>
+      <td>{{publication.date}}</td>
+      <td>{{publication.lien}}</td>
+      <td width=275> 
+          <a class="btn btn-info"  >Detail</a> 
+          <a class="btn btn-success" routerLink="/publication/{{publication.id}}"  >Edit</a>
+          <a class="btn btn-danger" (click)="supprimerPublication(publication.id)" >Delete</a >
+      </td>
+    </tr>
   </table>
 </div>
 <!----------------   fin Tableau   --------------->
 
 <!----------------   Formulaire Ajout actualité commence ici  --------------->
-<div id="Form" *ngIf="formOnOff">
+<div id="Form" *ngIf="formOnOff"  >
   <div class="panel panel-default">
     <div class="panel-body">
-      <form class="form-horizontal" method="post" action="ajoutPatient.php">
+      <form class="form-horizontal"   (submit)="ajouterPublication()">
 
         <div class="form-group">
           <label  class="col-sm-4 control-label">titre</label>
           <div class="col-sm-4">
-            <input type="text" class="form-control" name="titre" placeholder="titre" required>
+            <input type="text" class="form-control" name="titre" placeholder="titre" [(ngModel)]="model.titre"   required>
           </div>
         </div>
 
         <div class="form-group">
           <label  class="col-sm-4 control-label">Date d'admission</label>
           <div class="col-sm-4">
-            <input type="date" class="form-control" name="dh" placeholder="Date d'admission" required>
+            <input type="date" class="form-control" name="date" placeholder="Date d'admission" [(ngModel)]="model.datee"   required>
           </div>
         </div>
 
         <div class="form-group">
           <label  class="col-sm-4 control-label">fichier</label>
           <div class="col-sm-4">
-            <input type="text" class="form-control" name="contenu" placeholder="contenu" required>
+            <input type="text" class="form-control" name="lien" placeholder="urll" [(ngModel)]="model.lien"   required>
           </div>
         </div>
 

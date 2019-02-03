@@ -87,4 +87,13 @@ export class DataService {
   supprimerActualite(id){
     return this.Http.post("http://localhost/Back/supprimerActualite.php/",{'id':id})
   }
+
+  addImage(fd){
+    return this.Http.post("http://localhost/Back/addFile.php",fd, {
+        headers: new HttpHeaders().set('Content-Type', 'application/json'),
+        responseType: 'text' 
+     });
+
+
+  }
 }

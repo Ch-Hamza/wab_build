@@ -7,6 +7,8 @@
 inner header end-->
 <br>
 <br>
+<div *ngIf="test">
+
 <h1 class="wew fadeInUp " data-wew-delay="1s ">
   <span>Modifier Publications</span>
 </h1>
@@ -82,3 +84,8 @@ inner header end-->
   </div>
 </div>
 <!----------------   fin Formulaire   --------------->
+</div>
+<div *ngIf="!test">
+  <app-login></app-login>
+
+</div>

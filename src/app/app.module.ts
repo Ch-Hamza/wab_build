@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule ,CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
+import { NgModule ,CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA} from '@angular/core';
 import {StorageServiceModule} from 'angular-webstorage-service';
 import{MDBBootstrapModule} from 'angular-bootstrap-md';
 //import {NgxImageZoomModule} from 'ngx-image-zoom';
@@ -26,6 +26,7 @@ import { HeaderAdminComponent } from './header-admin/header-admin.component';
 import { BoiteDeReceptionComponent } from './boite-de-reception/boite-de-reception.component';
 import { ModifierUnePublicationComponent } from './modifier-une-publication/modifier-une-publication.component';
 import { ModifierUneActualiteComponent } from './modifier-une-actualite/modifier-une-actualite.component';
+import { GardServiceService } from './gard-service.service';
 
 @NgModule({
   declarations: [
@@ -58,8 +59,8 @@ import { ModifierUneActualiteComponent } from './modifier-une-actualite/modifier
     MDBBootstrapModule.forRoot()
    // NgxImageZoomModule.forRoot()
   ],
- // schemas : [NO_ERRORS_SCHEMA],
-  providers: [ GardServiceService , DataService ],
+  schemas : [NO_ERRORS_SCHEMA],
+  providers: [  GardServiceService,DataService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

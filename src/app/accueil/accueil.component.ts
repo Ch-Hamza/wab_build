@@ -23,14 +23,14 @@ export class AccueilComponent implements OnInit {
   app.EspaceAdmin=false;
 
 
-    this.dataserv.getData('https://jsonplaceholder.typicode.com/posts').subscribe( //url back 
+    this.dataserv.getData('http://localhost/Back/publication.php').subscribe( //url back 
       (data: any) => {
         for (var i = 0; i < 4; i++) { //retour back les 4 plus récents 
           this.$posts.push(data[i]);
 
         }
 
-        console.log(this.$posts);
+        console.log("coucou",this.$posts);
 
       },
 

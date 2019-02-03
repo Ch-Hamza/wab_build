@@ -2,6 +2,9 @@ import { Injectable } from '@angular/core';
 import { AppComponent } from './app.component';
 import { Router , CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot} from '@angular/router';
 import { Observable } from 'rxjs';
+import { HttpClient, HttpHeaders, HttpClientModule } from '@angular/common/http';
+
+
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +20,7 @@ export class GardServiceService implements CanActivate {
 
     console.log("helloff");
     
-    this.router.navigateByUrl('login');
-    return false ; }
-    return true ;
+    this.router.navigate(['login']);
+    return true ; }
+    return false ;
      } }

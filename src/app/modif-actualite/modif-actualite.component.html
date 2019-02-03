@@ -5,6 +5,8 @@
     </div>
 </div>
 inner header end-->
+<div *ngIf="test">
+
 <br>
 <br>
 <h1 class="wew fadeInUp " data-wew-delay="1s ">
@@ -52,7 +54,7 @@ inner header end-->
 <div id="Form" *ngIf="formOnOff">
   <div class="panel panel-default">
     <div class="panel-body">
-      <form class="form-horizontal"  (submit)="ajouterActualite()">
+      <form class="form-horizontal" enctype="multipart/form-data" (submit)="ajouterActualite()">
 
         <div class="form-group">
           <label  class="col-sm-4 control-label">titre</label>
@@ -79,6 +81,9 @@ inner header end-->
           <div class="col-sm-offset-4 col-sm-10">
             <button type="submit" name="ok" class="btn btn-primary">Ajouter actualité</button>
           </div>
+          <div class ="col-sm-offset-4 col-sm-10">
+            <input type="file" (change)="onFileChanged($event)" name="fileToUpload" id="fileToUpload">
+          </div>
         </div>
       </form>
     </div>
@@ -86,3 +91,8 @@ inner header end-->
 </div>
 <!----------------   fin Formulaire   --------------->
 
+</div>
+<div *ngIf="!test">
+  <app-login></app-login>
+
+</div>

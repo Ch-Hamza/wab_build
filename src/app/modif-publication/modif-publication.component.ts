@@ -19,6 +19,7 @@ import {
 })
 export class ModifPublicationComponent implements OnInit {
 formOnOff=false;
+test;
 publications;
   constructor(private router: Router, private dataService: DataService,private app:AppComponent) {
     app.EspaceAdmin=true;
@@ -29,6 +30,10 @@ publications;
   }
 
   ngOnInit() {
+    if (localStorage.getItem('name') )
+    { this.test =true}
+    else this.test=false ;
+    console.log(this.test);
   }
     formOn(){
         this.formOnOff=true;

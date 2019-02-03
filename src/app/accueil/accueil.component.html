@@ -6,7 +6,7 @@
             <div class="overlay"></div>
 
             <div class="meta">
-                <h1><span>WAB- expert comptables </span></h1>
+                <h1><span>WAB Expert-Comptable </span></h1>
                 <h2><span> </span></h2>
                 <div class="local-scroll p-t-60">
                     <a href="#" class="btn-style-6 size-small dark-skin corner-off-rounded">Plus</a>
@@ -18,11 +18,11 @@
 
             <div class="overlay"></div>
             <div class="meta">
-                <h1><span>Tous vos services</span></h1>
+                <h1><span><a style="color:white" routerLink="/services" >Tous nos services</a></span></h1>
                 <h2><span></span></h2>
                 <div class="local-scroll p-t-60">
-                    <a href="#" class="btn-style-6 size-small dark-skin corner-off-rounded">Plus</a>
-                    <a href="#" class="btn-style-6 size-small dark-skin corner-off-rounded">Nous contacter</a>
+                    <a routerLink="/cabinet" class="btn-style-6 size-small dark-skin corner-off-rounded">Plus</a>
+                    <a routerLink="/contact" class="btn-style-6 size-small dark-skin corner-off-rounded">Nous contacter</a>
                 </div>
             </div>
         </li>
@@ -66,7 +66,9 @@
     <div class="container">
     <div class="row p-b-60">
             <div class="col-md-8 col-xs-12 col-md-offset-2">
-                <h1>NOS ACTUALITES</h1>
+                <h1 class="wew fadeInUp " data-wew-delay="1s ">Nos
+                    <span>ACTUALITES</span>
+                </h1>
                 <p class="text-center"></p>
             </div>
         </div>
@@ -125,14 +127,14 @@
 
         <div class="row  margin-t-60 margin-b-60">
 
-            <div  *ngFor="let data of $posts" class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            <div  *ngFor="let publication of $posts" class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                 <div class="icon-box dgn-5">
                     <h4>
-                        <i class="fa fa-folder-o"></i> {{data.title}}</h4>
-                    <p>{{data.body}}
+                        <i class="fa fa-folder-o"></i> {{publication.date}}</h4>
+                    <p>{{publication.titre}}
                     </p>
                     <br>
-                    <a href="Publications/PDF1.pdf" target="_blank">
+                    <a href="../../assets/Publications/{{publication.lien}}" target="_blank">
                         <span class="read-more">charger le PDF
                             <i class="fa fa-angle-right"></i>
                         </span>

@@ -34,6 +34,12 @@ export class DataService {
     console.log(id);
     return this.Http.get('http://localhost/Back/get_pub_by_id.php?id=' + id);
   }
+  getPublicationsnum() {
+        return this.Http.get('http://localhost/Back/publicationnum.php');
+    }
+  getPublicationspage(i) {
+        return this.Http.get('http://localhost/Back/publicationpage.php?i=' + i);
+    }
   addMessage(obj) {
 
     let body = new URLSearchParams();

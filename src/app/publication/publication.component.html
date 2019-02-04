@@ -34,4 +34,16 @@
 
 
   </div>
+  <!-- Pagination -->
+  <div class="pagination-container">
+    <div class="row">
+      <div class="col-md-8 col-sm-6" style="text-align: center">
+        <ul class="pagination">
+          <li *ngIf="this.n>1"><a (click)="getpub(1)"><<</a></li>
+          <li *ngFor="let page of pages"><a (click)="getpub(page)">{{page}}</a></li>
+          <li *ngIf="this.n>1"><a (click)="getpub(n)">>></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </section>

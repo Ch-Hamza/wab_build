@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { getLocaleDateFormat } from '@angular/common';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-
+import 'rxjs/add/operator/map';
+import {Observable} from 'rxjs/Rx';
 
 
 @Injectable({
@@ -97,4 +98,6 @@ export class DataService {
   getMessages() {
     return this.Http.get('http://localhost/Back/messages.php');
   }
+ 
+
 }

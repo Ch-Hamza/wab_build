@@ -28,6 +28,7 @@ import { HeaderAdminComponent } from './header-admin/header-admin.component';
 import { BoiteDeReceptionComponent } from './boite-de-reception/boite-de-reception.component'; 
 import { ModifierUnePublicationComponent } from './modifier-une-publication/modifier-une-publication.component';
 import { ModifierUneActualiteComponent } from './modifier-une-actualite/modifier-une-actualite.component';
+ 
 
 @NgModule({
   declarations: [
@@ -51,14 +52,17 @@ import { ModifierUneActualiteComponent } from './modifier-une-actualite/modifier
     ModifierUneActualiteComponent
   ],
   imports: [
+     
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule , 
-    ReactiveFormsModule,
+    ReactiveFormsModule, 
     StorageServiceModule,
     MDBBootstrapModule.forRoot()
    // NgxImageZoomModule.forRoot()
+   
+    
   ],
  // schemas : [NO_ERRORS_SCHEMA],
   providers: [DataService],

@@ -20,6 +20,7 @@ import {
 })
 export class ModifContactUsComponent implements OnInit {
   model = new infocontact();
+  test;
   constructor(private router: Router, private dataService: DataService,private app:AppComponent, private activatedRoute: ActivatedRoute) {
     app.EspaceAdmin=true;
   }
@@ -31,6 +32,10 @@ export class ModifContactUsComponent implements OnInit {
         this.model = res[0];
         console.log(this.model);  
     });
+    if (localStorage.getItem('name') )
+    { this.test =true}
+    else this.test=false ;
+    console.log(this.test);
   }
   modifierInfoContact(){
 

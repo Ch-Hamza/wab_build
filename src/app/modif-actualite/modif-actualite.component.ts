@@ -20,6 +20,9 @@ import {
 export class ModifActualiteComponent implements OnInit {
 formOnOff=false;
 actualites;
+test ;
+selectedFile: File
+
   constructor(private router: Router, private dataService: DataService,private app:AppComponent  ) {
       app.EspaceAdmin=true;
       this.dataService.getActualites().subscribe(res => {
@@ -30,6 +33,15 @@ actualites;
   }
   
   ngOnInit() { 
+    console.log(this.app.Adminn);
+    console.log(localStorage.getItem('name'),"hhhh");
+    if (localStorage.getItem('name') )
+    { this.test =true}
+    else this.test=false ;
+    console.log(this.test);
+    
+    
+    
   }
    
 formOn(){
@@ -57,4 +69,28 @@ formOff(){
         .subscribe(()=> this.goBack());
         
   }
+
+  onFileChanged(event) {
+    if (event.target.files && event.target.files[0]) {
+
+    this.selectedFile = event.target.files[0];
+    const fd =new FormData ;
+    console.log(this.selectedFile);
+    
+    fd.append('image', this.selectedFile, this.selectedFile.name);
+     this.dataService.addImage(fd).subscribe(res =>{
+        console.log(res);
+    console.log("coucou");
+    }
+
+     )
+     console.log(11);
+     console.log(fd);
+     
+     
+  }}
+
+
+
+
 }

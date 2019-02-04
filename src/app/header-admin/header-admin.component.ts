@@ -7,11 +7,15 @@ import{Router} from '@angular/router';
   templateUrl: './header-admin.component.html',
   styleUrls: ['./header-admin.component.scss']
 })
-export class HeaderAdminComponent implements OnInit {
 
+export class HeaderAdminComponent implements OnInit {
+  test : any ;
   constructor(private app:AppComponent,private router:Router) { }
 
   ngOnInit() {
+    if (localStorage.getItem['name'] )
+    { this.test =true}
+    else this.test=false ;
   }
 Site(){
     this.app.EspaceAdmin=false;

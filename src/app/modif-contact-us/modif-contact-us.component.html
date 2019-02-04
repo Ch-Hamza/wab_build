@@ -7,9 +7,13 @@
 inner header end-->
 <br>
 <br>
+<div *ngIf="test">
 <h1 class="wew fadeInUp " data-wew-delay="1s ">
   <span>Modifier Contact</span>
 </h1>
+</div>
+<div *ngIf="!test">
+  <app-login></app-login>
 
 <form class="form-horizontal"  (submit)="modifierInfoContact()"  >
 
@@ -53,6 +57,7 @@ inner header end-->
       </div>
     </div>
   </form>
+</div>
 
 
 

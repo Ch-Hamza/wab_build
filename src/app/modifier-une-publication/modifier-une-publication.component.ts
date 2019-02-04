@@ -19,7 +19,7 @@ import {
   styleUrls: ['./modifier-une-publication.component.scss']
 })
 export class ModifierUnePublicationComponent implements OnInit {
-  
+  test;
   model = new publication();
   constructor(private router: Router, private dataService: DataService,private app:AppComponent, private activatedRoute: ActivatedRoute) { 
     app.EspaceAdmin=true;
@@ -27,6 +27,10 @@ export class ModifierUnePublicationComponent implements OnInit {
   }
 
   ngOnInit() {
+    if (localStorage.getItem('name') )
+    { this.test =true}
+    else this.test=false ;
+    console.log(this.test);
     let id = this.activatedRoute.snapshot.params['id'];
    console.log(id);
    this.dataService.getPublication(id).subscribe(res => {

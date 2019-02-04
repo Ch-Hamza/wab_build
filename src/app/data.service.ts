@@ -35,6 +35,12 @@ export class DataService {
     console.log(id);
     return this.Http.get('http://localhost/Back/get_pub_by_id.php?id=' + id);
   }
+  getPublicationsnum() {
+        return this.Http.get('http://localhost/Back/publicationnum.php');
+    }
+  getPublicationspage(i) {
+        return this.Http.get('http://localhost/Back/publicationpage.php?i=' + i);
+    }
   addMessage(obj) {
 
     let body = new URLSearchParams();
@@ -100,4 +106,12 @@ export class DataService {
   }
  
 
+  addImage(fd){
+    return this.Http.post("http://localhost/Back/addFile.php",fd, {
+        headers: new HttpHeaders().set('Content-Type', 'application/json'),
+        responseType: 'text' 
+     });
+
+
+  }
 }

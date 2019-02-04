@@ -35,6 +35,7 @@ export class ActualitesComponent implements OnInit {
               console.log(this.n);}
         if(this.n>5){
           this.nb=5;}
+          else this.nb=this.n;
           for(let i=1;i<=this.nb;i++){
             this.pages.push(i);
           }

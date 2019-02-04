@@ -11,9 +11,10 @@ import { LoginComponent } from './login/login.component';
 import {ModifActualiteComponent} from './modif-actualite/modif-actualite.component';
 import {ModifPublicationComponent} from './modif-publication/modif-publication.component';
 import {ModifContactUsComponent} from './modif-contact-us/modif-contact-us.component';
-import {BoiteDeReceptionComponent} from './boite-de-reception/boite-de-reception.component'; 
+import {BoiteDeReceptionComponent} from './boite-de-reception/boite-de-reception.component';
 import {ModifierUnePublicationComponent} from './modifier-une-publication/modifier-une-publication.component';
 import {ModifierUneActualiteComponent} from './modifier-une-actualite/modifier-une-actualite.component';
+import { GardServiceService } from './gard-service.service';
 const routes: Routes = [
 
   { path: 'cabinet', component: CabinetComponent },
@@ -24,7 +25,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'publication', component: PublicationComponent },
   { path: 'contact', component: ContactComponent },
-  { path: 'admin', component: ModifActualiteComponent },
+  { path: 'admin', component: ModifActualiteComponent /*, canActivate : [GardServiceService]*/ },
   { path: 'pub', component: ModifPublicationComponent },
   { path: 'boite', component: BoiteDeReceptionComponent },
   { path: 'modifcontact', component: ModifContactUsComponent },

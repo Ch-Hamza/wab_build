@@ -11,9 +11,9 @@ import {
 })
 export class ContactComponent implements OnInit {
   model: any = {};
-  test = false;
+  // test = false;
   onSubmit() {
-    this.test = true;
+    //this.test = true;
     alert('votre message est envoyé\n\n merci pour votre interet \n\n')
     console.log(this.model)
     this.dataService.addMessage(this.model).subscribe(res => { console.log(res) });

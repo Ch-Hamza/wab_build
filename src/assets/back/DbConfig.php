@@ -6,7 +6,7 @@ class DbConfig{
     private $_password='';  //password for the database
     private $_database='db'; //database name
 
-    protected $connection;
+    public $connection;
     public function __construct(){
         if(!isset($this->connection)){
             $this->connection=new mysqli($this->_host,$this->_username,$this->_password,$this->_database);

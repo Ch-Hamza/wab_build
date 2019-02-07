@@ -24,6 +24,7 @@ export class ActualitesComponent implements OnInit {
   pages=[];
   n;
   nb;
+  url;
   constructor(private router: Router, private dataService: DataService, private app: AppComponent) {
     app.EspaceAdmin = false;
       this.dataService.getActualitesnum().subscribe(res => {
@@ -63,6 +64,14 @@ export class ActualitesComponent implements OnInit {
         for(i;i<=this.nb;i++){
             this.pages.push(i);
         }
+    }
+    fbshare(id) {
+      this.url="http://www.wab-expert.com/";
+        window.open('https://www.facebook.com/sharer/sharer.php?u=' + this.url,
+            'facebook-share-dialog',
+            'width=800,height=600'
+        );
+        return false;
     }
 }
 

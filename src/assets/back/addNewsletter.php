@@ -4,6 +4,9 @@ header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
 
 require_once("DbConfig.php");
+$dbconfig = new DbConfig();
+$dbconfig->__construct();
+$connection=$dbconfig->connection;
 if((isset($_POST['email'])) && (filter_var($_POST['email'], FILTER_VALIDATE_EMAIL) ))
 {
 

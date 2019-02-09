@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { getLocaleDateFormat } from '@angular/common';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import 'rxjs/add/operator/map';
-import {Observable} from 'rxjs/Rx';
+
+import {Observable} from 'rxjs';
 
 
 @Injectable({

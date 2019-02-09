@@ -38,13 +38,14 @@ export class ModifContactUsComponent implements OnInit {
     console.log(this.test); */
   }
   modifierInfoContact(){
-
+    if(confirm("Voulez vous vraiment modifier vos données de contact") ){
     this.dataService
         .modifierInfoContact(this.model)
         .subscribe(()=> this.goBack());
        console.log(this.model);
-
+       location.reload();
       }
+    }
        goBack(){
         this.router.navigate(['/modifcontact']);
       }

@@ -39,13 +39,14 @@ export class ModifierUnePublicationComponent implements OnInit {
    });
   }
   modifierPublication(){
-
+    if(confirm("Voulez vous vraiment modifier cette publication") ){
     this.dataService
         .modifierPublication(this.model)
         .subscribe(()=> this.goBack());
        console.log(this.model);
 
       }
+    }
        goBack(){
         this.router.navigate(['/pub']);
       }

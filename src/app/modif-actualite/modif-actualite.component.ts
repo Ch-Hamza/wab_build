@@ -64,10 +64,12 @@ formOff(){
   }
 
     supprimerActualite(id){
+      if(confirm("Voulez vous vraiment supprimer cette actualité") ){
       this.dataService
         .supprimerActualite(id)
         .subscribe(()=> this.goBack());
         location.reload();
+      }
   }
 
   onFileChanged(event) {

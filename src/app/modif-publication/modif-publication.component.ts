@@ -48,10 +48,12 @@ constructor(private router: Router, private dataService: DataService,private app
     this.router.navigate(['/pub']);
   }
   supprimerPublication(id){
+    if(confirm("Voulez vous vraiment supprimer cette publication") ){
     this.dataService
       .supprimerPublication(id)
       .subscribe(()=> this.goBack());
       location.reload();
+    }
 }
  
 

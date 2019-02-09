@@ -14,7 +14,7 @@ import {ModifContactUsComponent} from './modif-contact-us/modif-contact-us.compo
 import {BoiteDeReceptionComponent} from './boite-de-reception/boite-de-reception.component';
 import {ModifierUnePublicationComponent} from './modifier-une-publication/modifier-une-publication.component';
 import {ModifierUneActualiteComponent} from './modifier-une-actualite/modifier-une-actualite.component';
-import { GardServiceService } from './gard-service.service';
+import { GardServiceService } from './gard-service.service'; 
 const routes: Routes = [
 
   { path: 'cabinet', component: CabinetComponent },
@@ -30,7 +30,7 @@ const routes: Routes = [
   { path: 'boite', component: BoiteDeReceptionComponent },
   { path: 'modifcontact', component: ModifContactUsComponent },
   { path: 'publication/:id', component: ModifierUnePublicationComponent },
-  { path: 'actualite/:id', component: ModifierUneActualiteComponent }
+  { path: 'actualite/:id', component: ModifierUneActualiteComponent } 
 
 
 

@@ -28,6 +28,7 @@ import { ModifierUnePublicationComponent } from './modifier-une-publication/modi
 import { ModifierUneActualiteComponent } from './modifier-une-actualite/modifier-une-actualite.component';
  
 import { GardServiceService } from './gard-service.service';
+import { NewsletterAdminComponent } from './newsletter-admin/newsletter-admin.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { GardServiceService } from './gard-service.service';
     HeaderAdminComponent,
     BoiteDeReceptionComponent,
     ModifierUnePublicationComponent,
-    ModifierUneActualiteComponent
+    ModifierUneActualiteComponent,
+    NewsletterAdminComponent
   ],
   imports: [
      

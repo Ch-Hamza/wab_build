@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {AppComponent} from '../app.component';  
 import {message} from '../message';
+import {mail} from '../mail';
 import * as data from '../../assets/contenu.json';
 import {
   Router
@@ -21,11 +22,16 @@ export class BoiteDeReceptionComponent implements OnInit {
   messages ;
   test;
   newsletter=false;
+  mails;
   constructor(private router: Router, private dataService: DataService,private app:AppComponent) {
       app.EspaceAdmin=true;
       this.dataService.getMessages().subscribe(res => {
         this.messages = res;
         console.log(this.messages);
+      });
+      this.dataService.getMails().subscribe(res => {
+        this.mails= res;
+        console.log(this.mails);
       });
   }
 
@@ -36,5 +42,6 @@ export class BoiteDeReceptionComponent implements OnInit {
   }
     newsletterOn(){this.newsletter=true;}
     newsletterOff(){this.newsletter=false;}
+
 
 }

@@ -107,14 +107,16 @@ export class DataService {
   getMessages() {
     return this.Http.get('http://localhost/Back/messages.php');
   }
- 
+  getMails(){
+    return this.Http.get('http://localhost/Back/mails.php');
+  }
 
   addImage(fd){
     return this.Http.post("http://localhost/Back/addFile.php",fd, {
         headers: new HttpHeaders().set('Content-Type', 'application/json'),
         responseType: 'text' 
      });
-
+  
 
   }
 }

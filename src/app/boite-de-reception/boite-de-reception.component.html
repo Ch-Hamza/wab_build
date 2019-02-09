@@ -51,8 +51,10 @@ inner header end-->
     <tr class="active ">
       <th >adresse email</th>
     </tr>
-    <tr>
-      <td></td>
+    <tr *ngFor="let mail of mails">
+      <td>{{mail.email}}</td>
+
+ 
     </tr>
 
   </table>

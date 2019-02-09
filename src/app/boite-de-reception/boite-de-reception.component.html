@@ -5,6 +5,7 @@
     </div>
 </div>
 inner header end-->
+<div *ngIf="test">
 <br>
 <br>
 <h1 class="wew fadeInUp " data-wew-delay="1s ">
@@ -38,4 +39,6 @@ inner header end-->
 
   </table>
 </div>
+</div>
 <!----------------   fin Tableau   --------------->
+<div *ngIf="!test"><app-login></app-login></div>

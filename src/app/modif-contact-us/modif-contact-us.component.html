@@ -11,17 +11,14 @@ inner header end-->
 <h1 class="wew fadeInUp " data-wew-delay="1s ">
   <span>Modifier Contact</span>
 </h1>
-</div>
-<div *ngIf="!test">
-  <app-login></app-login>
 
-<form class="form-horizontal"  (submit)="modifierInfoContact()"  >
+  <form class="form-horizontal"  (submit)="modifierInfoContact()"  >
 
-  <div class="form-group"> 
-    <div class="col-sm-4">
-      <input type="hidden" class="form-control" name="id" [(ngModel)]="model.id"  required>
+    <div class="form-group">
+      <div class="col-sm-4">
+        <input type="hidden" class="form-control" name="id" [(ngModel)]="model.id"  required>
+      </div>
     </div>
-  </div>
 
     <div class="form-group">
       <label  class="col-sm-4 control-label">adresse</label>
@@ -40,49 +37,52 @@ inner header end-->
     <div class="form-group">
       <label  class="col-sm-4 control-label">téléphone1</label>
       <div class="col-sm-4">
-        <input type="text" class="form-control" name="tel1"    [(ngModel)]="model.tel1"  required> 
+        <input type="text" class="form-control" name="tel1"    [(ngModel)]="model.tel1"  required>
       </div>
     </div>
     <div class="form-group">
       <label  class="col-sm-4 control-label">téléphone2</label>
       <div class="col-sm-4">
-        <input type="text" class="form-control" name="tel2"    [(ngModel)]="model.tel2"  required> 
+        <input type="text" class="form-control" name="tel2"    [(ngModel)]="model.tel2"  required>
       </div>
     </div>
 
     <div class="form-group">
-        <label  class="col-sm-4 control-label">fax</label>
-        <div class="col-sm-4">
-          <input type="text" class="form-control" name="fax"    [(ngModel)]="model.fax"  required> 
-        </div>
+      <label  class="col-sm-4 control-label">fax</label>
+      <div class="col-sm-4">
+        <input type="text" class="form-control" name="fax"    [(ngModel)]="model.fax"  required>
       </div>
+    </div>
 
-      <div class="form-group">
-        <label  class="col-sm-4 control-label">facebook</label>
-        <div class="col-sm-4">
-          <input type="text" class="form-control" name="facebook"    [(ngModel)]="model.facebook"  required> 
-        </div>
+    <div class="form-group">
+      <label  class="col-sm-4 control-label">facebook</label>
+      <div class="col-sm-4">
+        <input type="text" class="form-control" name="facebook"    [(ngModel)]="model.facebook"  required>
       </div>
+    </div>
 
-      <div class="form-group">
-        <label  class="col-sm-4 control-label">linkedin</label>
-        <div class="col-sm-4">
-          <input type="text" class="form-control" name="linkedin"    [(ngModel)]="model.linkedin"  required> 
-        </div>
+    <div class="form-group">
+      <label  class="col-sm-4 control-label">linkedin</label>
+      <div class="col-sm-4">
+        <input type="text" class="form-control" name="linkedin"    [(ngModel)]="model.linkedin"  required>
       </div>
+    </div>
 
-      <div class="form-group">
-        <label  class="col-sm-4 control-label">twitter</label>
-        <div class="col-sm-4">
-          <input type="text" class="form-control" name="twitter"    [(ngModel)]="model.twitter"  required> 
-        </div>
+    <div class="form-group">
+      <label  class="col-sm-4 control-label">twitter</label>
+      <div class="col-sm-4">
+        <input type="text" class="form-control" name="twitter"    [(ngModel)]="model.twitter"  required>
       </div>
+    </div>
     <div class="form-group">
       <div class="col-sm-offset-4 col-sm-10">
         <button type="submit" name="ok" class="btn btn-primary">Modifier</button>
       </div>
     </div>
   </form>
+</div>
+<div *ngIf="!test">
+  <app-login></app-login>
 </div>
 
 

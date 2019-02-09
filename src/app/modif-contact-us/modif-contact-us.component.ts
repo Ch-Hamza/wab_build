@@ -17,12 +17,15 @@ import {
 })
 export class ModifContactUsComponent implements OnInit {
   model = new contact();
-  //test;
+  test;
   constructor(private router: Router, private dataService: DataService,private app:AppComponent, private activatedRoute: ActivatedRoute) {
     app.EspaceAdmin=true;
   }
 
   ngOnInit() {
+      if (localStorage.getItem('name') )
+      { this.test =true;}
+      else this.test=false ;
     let id = this.activatedRoute.snapshot.params['id'];
     console.log(id);
     this.dataService.getInfoContact(id).subscribe(res => {

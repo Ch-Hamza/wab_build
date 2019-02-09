@@ -20,7 +20,7 @@ import {
 export class BoiteDeReceptionComponent implements OnInit {
   formOnOff=false;
   messages ;
-
+  test;
   constructor(private router: Router, private dataService: DataService,private app:AppComponent) {
       app.EspaceAdmin=true;
       this.dataService.getMessages().subscribe(res => {
@@ -30,6 +30,9 @@ export class BoiteDeReceptionComponent implements OnInit {
   }
 
   ngOnInit() {
+      if (localStorage.getItem('name') )
+      { this.test =true;}
+      else this.test=false ;
   }
 
 }

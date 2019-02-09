@@ -1,4 +1,4 @@
- 
+<div *ngIf="test">
       <form class="form-horizontal"  (submit)="modifierActualite()"  >
 
         <div class="form-group"> 
@@ -34,4 +34,8 @@
           </div>
         </div>
       </form>
+    </div>
+    <div *ngIf="!test">
+      <app-login></app-login>
     
+    </div>

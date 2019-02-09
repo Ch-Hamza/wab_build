@@ -37,7 +37,7 @@ inner header end-->
       <td>{{actualite.datee}}</td>
       <td>{{actualite.contenu}}</td>
       <td width=275> 
-          <a class="btn btn-info"  >Detail</a> 
+          <a class="btn btn-info" routerLink="/uneactualite/{{actualite.id}}"  >Detail</a> 
           <a class="btn btn-success"  routerLink="/actualite/{{actualite.id}}" >Edit</a>
           <a class="btn btn-danger" (click)="supprimerActualite(actualite.id)" >Delete</a >
       </td>

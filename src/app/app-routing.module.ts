@@ -14,6 +14,9 @@ import {ModifContactUsComponent} from './modif-contact-us/modif-contact-us.compo
 import {BoiteDeReceptionComponent} from './boite-de-reception/boite-de-reception.component';
 import {ModifierUnePublicationComponent} from './modifier-une-publication/modifier-une-publication.component';
 import {ModifierUneActualiteComponent} from './modifier-une-actualite/modifier-une-actualite.component';
+import {AffichUneActualiteAdminComponent} from './affich-une-actualite-admin/affich-une-actualite-admin.component';
+import {AffichUnePublicationAdminComponent} from './affich-une-publication-admin/affich-une-publication-admin.component';
+import {AffichUnMessageAdminComponent} from './affich-un-message-admin/affich-un-message-admin.component';
 import { GardServiceService } from './gard-service.service'; 
 const routes: Routes = [
 
@@ -30,7 +33,10 @@ const routes: Routes = [
   { path: 'boite', component: BoiteDeReceptionComponent },
   { path: 'modifcontact', component: ModifContactUsComponent },
   { path: 'publication/:id', component: ModifierUnePublicationComponent },
-  { path: 'actualite/:id', component: ModifierUneActualiteComponent } 
+  { path: 'actualite/:id', component: ModifierUneActualiteComponent },
+  { path: 'uneactualite/:id', component: AffichUneActualiteAdminComponent },
+  { path: 'unepublication/:id', component: AffichUnePublicationAdminComponent },
+  { path: 'unmessage/:id', component:AffichUnMessageAdminComponent}
 
 
 

@@ -38,7 +38,7 @@ inner header end-->
       <td>{{publication.date}}</td>
       <td>{{publication.lien}}</td>
       <td width=275> 
-          <a class="btn btn-info"  >Detail</a> 
+          <a class="btn btn-info"  routerLink="/unepublication/{{publication.id}}" >Detail</a> 
           <a class="btn btn-success" routerLink="/publication/{{publication.id}}"  >Edit</a>
           <a class="btn btn-danger" (click)="supprimerPublication(publication.id)" >Delete</a >
       </td>

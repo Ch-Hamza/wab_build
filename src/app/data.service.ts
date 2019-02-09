@@ -110,7 +110,9 @@ export class DataService {
   getMails(){
     return this.Http.get('http://localhost/Back/mails.php');
   }
-
+  getMessage(id){
+    return this.Http.get('http://localhost/Back/getmessage.php?id=' + id);   
+  }
   addImage(fd){
     return this.Http.post("http://localhost/Back/addFile.php",fd, {
         headers: new HttpHeaders().set('Content-Type', 'application/json'),

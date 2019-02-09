@@ -67,7 +67,7 @@ formOff(){
       this.dataService
         .supprimerActualite(id)
         .subscribe(()=> this.goBack());
-        
+        location.reload();
   }
 
   onFileChanged(event) {

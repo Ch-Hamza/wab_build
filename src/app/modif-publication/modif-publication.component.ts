@@ -6,8 +6,8 @@ import {
 } from '@angular/router';
 import {
   DataService
-} from '../data.service';  
- 
+} from '../data.service';   
+
 @Component({
   selector: 'app-modif-publication',
   templateUrl: './modif-publication.component.html',
@@ -16,8 +16,7 @@ import {
 export class ModifPublicationComponent implements OnInit {
 formOnOff=false;
 test;
-publications;
- 
+publications; 
 constructor(private router: Router, private dataService: DataService,private app:AppComponent) {
     app.EspaceAdmin=true;
     this.dataService.getPublications().subscribe(res => {
@@ -52,9 +51,9 @@ constructor(private router: Router, private dataService: DataService,private app
     this.dataService
       .supprimerPublication(id)
       .subscribe(()=> this.goBack());
-      
+      location.reload();
 }
  
- 
+
 }
  

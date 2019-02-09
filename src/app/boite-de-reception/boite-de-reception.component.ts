@@ -18,9 +18,9 @@ import {
   styleUrls: ['./boite-de-reception.component.scss']
 })
 export class BoiteDeReceptionComponent implements OnInit {
-  formOnOff=false;
   messages ;
   test;
+  newsletter=false;
   constructor(private router: Router, private dataService: DataService,private app:AppComponent) {
       app.EspaceAdmin=true;
       this.dataService.getMessages().subscribe(res => {
@@ -34,5 +34,7 @@ export class BoiteDeReceptionComponent implements OnInit {
       { this.test =true;}
       else this.test=false ;
   }
+    newsletterOn(){this.newsletter=true;}
+    newsletterOff(){this.newsletter=false;}
 
 }

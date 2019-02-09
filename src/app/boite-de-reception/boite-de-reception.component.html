@@ -11,9 +11,14 @@ inner header end-->
 <h1 class="wew fadeInUp " data-wew-delay="1s ">
   <span>Boite De Reception</span>
 </h1>
-
-<!----------------   Affichage Historique commence ici   --------------->
-<div id="liste" *ngIf="!formOnOff">
+  <div>
+    <ul class="nav nav-tabs">
+      <li><a (click)="newsletterOff()"><strong>Messages</strong></a></li>
+      <li><a (click)="newsletterOn()"><strong>Newsletters</strong></a></li>
+    </ul>
+  </div>
+<!----------------   Affichage commence ici   --------------->
+<div id="liste" *ngIf="!newsletter">
   <table class="table table-bordered table-hover" >
 
     <tr class="active ">
@@ -39,6 +44,19 @@ inner header end-->
 
   </table>
 </div>
-</div>
 <!----------------   fin Tableau   --------------->
+<div id="liste" *ngIf="newsletter">
+  <table class="table table-bordered table-hover" >
+
+    <tr class="active ">
+      <th >adresse email</th>
+    </tr>
+    <tr>
+      <td></td>
+    </tr>
+
+  </table>
+</div>
+</div>
+<!-- fin boite de reception -->
 <div *ngIf="!test"><app-login></app-login></div>

@@ -27,8 +27,7 @@ import { BoiteDeReceptionComponent } from './boite-de-reception/boite-de-recepti
 import { ModifierUnePublicationComponent } from './modifier-une-publication/modifier-une-publication.component';
 import { ModifierUneActualiteComponent } from './modifier-une-actualite/modifier-une-actualite.component';
  
-import { GardServiceService } from './gard-service.service';
-import { NewsletterAdminComponent } from './newsletter-admin/newsletter-admin.component';
+import { GardServiceService } from './gard-service.service'; 
 
 @NgModule({
   declarations: [
@@ -49,8 +48,7 @@ import { NewsletterAdminComponent } from './newsletter-admin/newsletter-admin.co
     HeaderAdminComponent,
     BoiteDeReceptionComponent,
     ModifierUnePublicationComponent,
-    ModifierUneActualiteComponent,
-    NewsletterAdminComponent
+    ModifierUneActualiteComponent 
   ],
   imports: [
      

@@ -26,6 +26,7 @@ import { HeaderAdminComponent } from './header-admin/header-admin.component';
 import { BoiteDeReceptionComponent } from './boite-de-reception/boite-de-reception.component';
 import { ModifierUnePublicationComponent } from './modifier-une-publication/modifier-une-publication.component';
 import { ModifierUneActualiteComponent } from './modifier-une-actualite/modifier-une-actualite.component';
+ 
 import { GardServiceService } from './gard-service.service';
 
 @NgModule({
@@ -50,14 +51,17 @@ import { GardServiceService } from './gard-service.service';
     ModifierUneActualiteComponent
   ],
   imports: [
+     
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule ,
-    ReactiveFormsModule,
+    HttpClientModule , 
+    ReactiveFormsModule, 
     StorageServiceModule,
     MDBBootstrapModule.forRoot()
    // NgxImageZoomModule.forRoot()
+   
+    
   ],
   schemas : [NO_ERRORS_SCHEMA],
   providers: [  GardServiceService,DataService ],

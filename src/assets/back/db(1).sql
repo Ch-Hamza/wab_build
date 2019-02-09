@@ -1,26 +1,26 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
--- https://www.phpmyadmin.net/
+-- version 4.0.4
+-- http://www.phpmyadmin.net
 --
--- Hôte : 127.0.0.1:3306
--- Généré le :  mer. 30 jan. 2019 à 13:06
--- Version du serveur :  5.7.19
--- Version de PHP :  5.6.31
+-- Client: localhost
+-- Généré le: Ven 01 Février 2019 à 10:05
+-- Version du serveur: 5.6.12-log
+-- Version de PHP: 5.4.16
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+/*!40101 SET NAMES utf8 */;
 
 --
--- Base de données :  `db`
+-- Base de données: `db`
 --
+CREATE DATABASE IF NOT EXISTS `db` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `db`;
 
 -- --------------------------------------------------------
 
@@ -28,30 +28,13 @@ SET time_zone = "+00:00";
 -- Structure de la table `actualite`
 --
 
-DROP TABLE IF EXISTS `actualite`;
 CREATE TABLE IF NOT EXISTS `actualite` (
-  `id` varchar(255) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `titre` varchar(255) NOT NULL,
   `datee` varchar(255) NOT NULL,
-  `contenu` varchar(255) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
---
--- Déchargement des données de la table `actualite`
---
-
-INSERT INTO `actualite` (`id`, `titre`, `datee`, `contenu`) VALUES
-('1', 'sqdfg', '1/1/1', 'gdhfhjkhkhfhgd'),
-('', 'fghjk', 'dfghjklm', 'gfhjkl'),
-('', 'dfgh', 'sdf', 'sdfghj'),
-('6', 'gfhjklm', 'fhgjklml', 'hgjklm'),
-('5', 'hkjl', 'ghjkj', 'gjhkl'),
-('4', 'hello1', 'ghjkl', 'ghjk'),
-('7', 'fghjklmm', 'fhgjklml', 'gjhklm'),
-('8', 'fgkjlm', 'gfhjklm', 'hgjklm'),
-('9', 'fghjkl', 'fghjklm', 'ghjklm'),
-('10', 'fghjkl', 'dfghjk', 'ghjkl'),
-('11', 'sdfhgjkl', 'fghjk', 'dgfhj');
+  `contenu` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -59,7 +42,6 @@ INSERT INTO `actualite` (`id`, `titre`, `datee`, `contenu`) VALUES
 -- Structure de la table `admin`
 --
 
-DROP TABLE IF EXISTS `admin`;
 CREATE TABLE IF NOT EXISTS `admin` (
   `username` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
@@ -67,7 +49,7 @@ CREATE TABLE IF NOT EXISTS `admin` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Déchargement des données de la table `admin`
+-- Contenu de la table `admin`
 --
 
 INSERT INTO `admin` (`username`, `password`, `email`) VALUES
@@ -79,7 +61,6 @@ INSERT INTO `admin` (`username`, `password`, `email`) VALUES
 -- Structure de la table `contact_form`
 --
 
-DROP TABLE IF EXISTS `contact_form`;
 CREATE TABLE IF NOT EXISTS `contact_form` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nom` varchar(50) NOT NULL,
@@ -89,10 +70,10 @@ CREATE TABLE IF NOT EXISTS `contact_form` (
   `sujet` varchar(200) NOT NULL,
   `messagee` varchar(500) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
 
 --
--- Déchargement des données de la table `contact_form`
+-- Contenu de la table `contact_form`
 --
 
 INSERT INTO `contact_form` (`id`, `nom`, `prenom`, `telephone`, `email`, `sujet`, `messagee`) VALUES
@@ -109,18 +90,39 @@ INSERT INTO `contact_form` (`id`, `nom`, `prenom`, `telephone`, `email`, `sujet`
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `infocontact`
+--
+
+CREATE TABLE IF NOT EXISTS `infocontact` (
+  `adresse` varchar(255) NOT NULL,
+  `mail` varchar(255) NOT NULL,
+  `telephone` varchar(255) NOT NULL,
+  `fax` varchar(255) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Contenu de la table `infocontact`
+--
+
+INSERT INTO `infocontact` (`adresse`, `mail`, `telephone`, `fax`, `id`) VALUES
+('Cabinet Wajdi ABDELHEDI - RÃ©sidence LES LILAS, Bloc B, 5Ã¨me Ã©tage, bureau nÂ°11 Centre Urbain Nord, 1082, Tunis', 'contact@wab-expert.com', '(+216) 71 948 214\r\n(+216) 71 949 214', '(+216) 71 948 177', 1);
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `newsletter_form`
 --
 
-DROP TABLE IF EXISTS `newsletter_form`;
 CREATE TABLE IF NOT EXISTS `newsletter_form` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `email` varchar(70) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
 
 --
--- Déchargement des données de la table `newsletter_form`
+-- Contenu de la table `newsletter_form`
 --
 
 INSERT INTO `newsletter_form` (`id`, `email`) VALUES
@@ -140,17 +142,16 @@ INSERT INTO `newsletter_form` (`id`, `email`) VALUES
 -- Structure de la table `publication`
 --
 
-DROP TABLE IF EXISTS `publication`;
 CREATE TABLE IF NOT EXISTS `publication` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `date` date NOT NULL,
   `titre` varchar(250) NOT NULL,
   `lien` varchar(250) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=12 ;
 
 --
--- Déchargement des données de la table `publication`
+-- Contenu de la table `publication`
 --
 
 INSERT INTO `publication` (`id`, `date`, `titre`, `lien`) VALUES
@@ -165,7 +166,6 @@ INSERT INTO `publication` (`id`, `date`, `titre`, `lien`) VALUES
 (9, '0001-01-01', 'pub9', 'ghjklm'),
 (10, '0001-01-01', 'pub10', 'ghjkl'),
 (11, '0001-01-01', 'pub11', 'dgfhj');
-COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

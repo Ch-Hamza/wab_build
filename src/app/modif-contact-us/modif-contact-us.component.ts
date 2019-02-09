@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {AppComponent} from '../app.component';
-import {infocontact} from '../infocontact';
-import * as data from '../../assets/contenu.json';
+import {contact} from '../contact'; 
 import {ActivatedRoute} from '@angular/router';
 import {
   Router
@@ -9,9 +8,7 @@ import {
 import {
   DataService
 } from '../data.service';
-import {
-  delay
-} from 'q';
+ 
 
 @Component({
   selector: 'app-modif-contact-us',
@@ -19,8 +16,8 @@ import {
   styleUrls: ['./modif-contact-us.component.scss']
 })
 export class ModifContactUsComponent implements OnInit {
-  model = new infocontact();
-  test;
+  model = new contact();
+  //test;
   constructor(private router: Router, private dataService: DataService,private app:AppComponent, private activatedRoute: ActivatedRoute) {
     app.EspaceAdmin=true;
   }
@@ -32,10 +29,10 @@ export class ModifContactUsComponent implements OnInit {
         this.model = res[0];
         console.log(this.model);  
     });
-    if (localStorage.getItem('name') )
+   /* if (localStorage.getItem('name') )
     { this.test =true}
     else this.test=false ;
-    console.log(this.test);
+    console.log(this.test); */
   }
   modifierInfoContact(){
 

@@ -19,7 +19,7 @@ import {
 })
 export class BoiteDeReceptionComponent implements OnInit {
   formOnOff=false;
-  messages;
+  messages ;
 
   constructor(private router: Router, private dataService: DataService,private app:AppComponent) {
       app.EspaceAdmin=true;

@@ -16,13 +16,37 @@ import {
 export class ModifPublicationComponent implements OnInit {
 formOnOff=false;
 test;
-publications; 
+publications;
+    pages=[];
+    n;
+    nb;
 constructor(private router: Router, private dataService: DataService,private app:AppComponent) {
     app.EspaceAdmin=true;
-    this.dataService.getPublications().subscribe(res => {
+    this.dataService.getPublicationsnum().subscribe(res => {
+        if(res[0]['COUNT(id)']%8==0){
+            this.n= res[0]['COUNT(id)']/8;}
+        else
+        {this.n= (res[0]['COUNT(id)']/8)+1;
+            this.n=parseInt(this.n);
+            console.log(this.n);}
+        if(this.n>5){
+            this.nb=5;}
+        else this.nb=this.n;
+        for(let i=1;i<=this.nb;i++){
+            this.pages.push(i);
+        }
+        console.log(this.pages);
+    });
+    this.dataService.getPublicationspage(1).subscribe(res => {
+        this.publications = res;
+        this.publications.reverse();
+        console.log(this.publications);
+    });
+
+    /*this.dataService.getPublications().subscribe(res => {
       this.publications = res;
       console.log(this.publications);
-    });
+    });*/
   }
 
   ngOnInit() {
@@ -56,7 +80,20 @@ constructor(private router: Router, private dataService: DataService,private app
       location.reload();
     }
 }
- 
-
+    getpub(i){
+        this.dataService.getPublicationspage(i).subscribe(res => {
+            this.publications = res;
+            this.publications.reverse();
+            console.log(this.publications);
+        });
+        this.pages=[];
+        if(this.n-i>=5){
+            this.nb=i+5;}
+        else{this.nb=this.n;}
+        if(i>1){i=i-1;}
+        for(i;i<=this.nb;i++){
+            this.pages.push(i);
+        }
+    }
 }
  

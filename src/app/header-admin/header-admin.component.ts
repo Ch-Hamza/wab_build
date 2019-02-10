@@ -17,9 +17,6 @@ export class HeaderAdminComponent implements OnInit {
     { this.test =true}
     else this.test=false ;
   }
-Site(){
-    this.app.EspaceAdmin=false;
-}
 logout(){
         this.app.Adminn=false;
         localStorage.clear();

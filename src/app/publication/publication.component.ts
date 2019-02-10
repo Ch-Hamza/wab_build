@@ -35,10 +35,10 @@ export class PublicationComponent implements OnInit {
   constructor(private router: Router, private dataService: DataService, private app: AppComponent) {
     app.EspaceAdmin = false;
       this.dataService.getPublicationsnum().subscribe(res => {
-          if(res[0]['COUNT(id)']%6==0){
-              this.n= res[0]['COUNT(id)']/6;}
+          if(res[0]['COUNT(id)']%8==0){
+              this.n= res[0]['COUNT(id)']/8;}
           else
-          {this.n= (res[0]['COUNT(id)']/6)+1;
+          {this.n= (res[0]['COUNT(id)']/8)+1;
               this.n=parseInt(this.n);
               console.log(this.n);}
           if(this.n>5){

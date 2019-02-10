@@ -9,8 +9,8 @@
                 <h1><span>WAB Expert-Comptable </span></h1>
                 <h2><span> </span></h2>
                 <div class="local-scroll p-t-60">
-                    <a href="#" class="btn-style-6 size-small dark-skin corner-off-rounded">Plus</a>
-                    <a href="#" class="btn-style-6 size-small dark-skin corner-off-rounded">Nous contacter</a>
+                    <a routerLink="/cabinet" class="btn-style-6 size-small dark-skin corner-off-rounded">Plus</a>
+                    <a routerLink="/contact" class="btn-style-6 size-small dark-skin corner-off-rounded">Nous contacter</a>
                 </div>
             </div>
         </li>
@@ -80,13 +80,15 @@
                         <div class="postimg"> <img class="actual" src="../../assets/images/1.jpg" alt="Blog Title"></div>
                         <div class="post-grid-desc">
                             <div class="blog-post-heading">
-                                <h4><a [routerLink]="'actualites/'+actualite.id" >{{actualite.titre}}</a></h4>
+                                <h4 style="width: auto;overflow: hidden;text-overflow: ellipsis" ><a [routerLink]="'actualites/'+actualite.id" >{{actualite.titre}}</a></h4>
                                 <div class="post-info-meta">Date: <span>{{actualite.datee}}</span></div>
                             </div>
                             <div class="post-info-meta">
                                 <p style="width: auto;overflow: hidden;text-overflow: ellipsis">{{actualite.contenu}}</p>
                                 <a [routerLink]="'actualites/'+actualite.id" class="btn-style-1 size-small light-skin uppercase corner-rounded">Suite</a>
                             </div>
+                            <hr>
+                            <iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&width=300&layout=standard&action=like&size=small&show_faces=true&share=true&height=80&appId" width="300" height="55" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
                         </div>
                     </div>
                 </li>
@@ -131,7 +133,7 @@
                 <div class="icon-box dgn-5">
                     <h4>
                         <i class="fa fa-folder-o"></i> {{publication.date}}</h4>
-                    <p>{{publication.titre}}
+                    <p  style="width: auto;overflow: hidden;text-overflow: ellipsis" >{{publication.titre}}
                     </p>
                     <br>
                     <a href="../../assets/Publications/{{publication.lien}}" target="_blank">

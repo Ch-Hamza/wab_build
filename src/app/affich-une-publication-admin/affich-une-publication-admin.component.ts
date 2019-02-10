@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {DataService} from '../data.service';
 import {publication} from '../publication';
+import {AppComponent} from '../app.component';
 @Component({
   selector: 'app-affich-une-publication-admin',
   templateUrl: './affich-une-publication-admin.component.html',
@@ -10,7 +11,9 @@ import {publication} from '../publication';
 export class AffichUnePublicationAdminComponent implements OnInit {
 
   model = new publication();
-  constructor(private activatedRoute: ActivatedRoute,private dataService: DataService) { }
+  constructor(private activatedRoute: ActivatedRoute,private dataService: DataService,private app:AppComponent) {
+    app.EspaceAdmin=true;
+  }
 
   ngOnInit() {
     let id = this.activatedRoute.snapshot.params['id'];

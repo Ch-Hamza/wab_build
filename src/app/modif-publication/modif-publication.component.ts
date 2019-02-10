@@ -43,6 +43,7 @@ constructor(private router: Router, private dataService: DataService,private app
       this.dataService
         .ajouterPublication(this.model)
         .subscribe(()=> this.goBack());
+        location.reload();
   }
    goBack(){
     this.router.navigate(['/pub']);

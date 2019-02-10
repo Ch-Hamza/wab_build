@@ -61,6 +61,7 @@ formOff(){
       this.dataService
         .ajouterActualite(this.model)
         .subscribe(()=> this.goBack());
+        location.reload();
   }
 
     supprimerActualite(id){

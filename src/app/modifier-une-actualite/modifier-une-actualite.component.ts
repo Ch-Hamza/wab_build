@@ -39,13 +39,14 @@ export class ModifierUneActualiteComponent implements OnInit {
     
   }
   modifierActualite(){
-
+    if(confirm("Voulez vous vraiment modifier cette actualité") ){
     this.dataService
         .modifierActualite(this.model)
         .subscribe(()=> this.goBack());
        console.log(this.model);
 
       }
+    }
        goBack(){
         this.router.navigate(['/admin']);
       }

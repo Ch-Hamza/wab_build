@@ -15,9 +15,6 @@ export class HeaderAdminComponent implements OnInit {
   ngOnInit() {
    
   }
-Site(){
-    this.app.EspaceAdmin=false;
-}
 logout(){
         this.app.Adminn=false;
         localStorage.clear();

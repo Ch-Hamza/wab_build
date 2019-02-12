@@ -37,13 +37,24 @@ inner header end-->
       <td>{{actualite.datee}}</td>
       <td>{{actualite.contenu}}</td>
       <td width=275> 
-          <a class="btn btn-info"  >Detail</a> 
+          <a class="btn btn-info" routerLink="/uneactualite/{{actualite.id}}"  >Detail</a> 
           <a class="btn btn-success"  routerLink="/actualite/{{actualite.id}}" >Edit</a>
           <a class="btn btn-danger" (click)="supprimerActualite(actualite.id)" >Delete</a >
       </td>
     </tr>
 
   </table>
+  <div class="pagination-container">
+    <div class="row">
+      <div class="col-md-8 col-sm-6" style="text-align: center">
+        <ul class="pagination" *ngIf="this.n>1">
+          <li ><a (click)="getact(1)"><<</a></li>
+          <li *ngFor="let page of pages"><a (click)="getact(page)">{{page}}</a></li>
+          <li ><a (click)="getact(n)">>></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </div>
 
 
@@ -55,6 +66,7 @@ inner header end-->
   <div class="panel panel-default">
     <div class="panel-body">
       <form class="form-horizontal" enctype="multipart/form-data" (submit)="ajouterActualite()">
+ 
 
         <div class="form-group">
           <label  class="col-sm-4 control-label">titre</label>
@@ -77,12 +89,16 @@ inner header end-->
           </div>
         </div>
 
+        <div class ="form-group">
+          <label  class="col-sm-4 control-label">image</label>
+          <div class="col-sm-4">
+          <input type="file" (change)="onFileChanged($event)" name="fileToUpload" id="fileToUpload">
+          </div>
+        </div>
+
         <div class="form-group">
           <div class="col-sm-offset-4 col-sm-10">
             <button type="submit" name="ok" class="btn btn-primary">Ajouter actualité</button>
-          </div>
-          <div class ="col-sm-offset-4 col-sm-10">
-            <input type="file" (change)="onFileChanged($event)" name="fileToUpload" id="fileToUpload">
           </div>
         </div>
       </form>

@@ -23,6 +23,7 @@ class Crud extends DbConfig{
         }
         
         return $rows;
+
     }
     
     public function execute($query){
@@ -33,6 +34,7 @@ class Crud extends DbConfig{
         }else{
             return true;
         }
+        
     }
         
     public function escape_string($value){

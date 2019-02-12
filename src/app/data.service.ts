@@ -107,14 +107,27 @@ export class DataService {
   getMessages() {
     return this.Http.get('http://localhost/Back/messages.php');
   }
- 
-
-  addImage(fd){
-    return this.Http.post("http://localhost/Back/addFile.php",fd, {
+  getMails(){
+    return this.Http.get('http://localhost/Back/mails.php');
+  }
+  getMessage(id) {
+    return this.Http.get('http://localhost/Back/getmessage.php?id=' + id);
+  }
+  getMessagespage(id) {
+    return this.Http.get('http://localhost/Back/messagespage.php?id=' + id);
+  }
+  getMessagessnum() {
+      return this.Http.get('http://localhost/Back/messagesnum.php');
+  }
+  getMailspage(id) {
+        return this.Http.get('http://localhost/Back/mailspage.php?id=' + id);
+    }
+  getMailsnum() {
+        return this.Http.get('http://localhost/Back/mailsnum.php');
+    }
+  addImage(fd) {
+    return this.Http.post('http://localhost/Back/addFile.php' , fd, {
         headers: new HttpHeaders().set('Content-Type', 'application/json'),
-        responseType: 'text' 
-     });
-
-
+        responseType: 'text'});
   }
 }

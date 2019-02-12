@@ -28,6 +28,9 @@ import { ModifierUnePublicationComponent } from './modifier-une-publication/modi
 import { ModifierUneActualiteComponent } from './modifier-une-actualite/modifier-une-actualite.component';
  
 import { GardServiceService } from './gard-service.service';
+import { AffichUneActualiteAdminComponent } from './affich-une-actualite-admin/affich-une-actualite-admin.component';
+import { AffichUnePublicationAdminComponent } from './affich-une-publication-admin/affich-une-publication-admin.component';
+import { AffichUnMessageAdminComponent } from './affich-un-message-admin/affich-un-message-admin.component'; 
 
 @NgModule({
   declarations: [
@@ -48,7 +51,10 @@ import { GardServiceService } from './gard-service.service';
     HeaderAdminComponent,
     BoiteDeReceptionComponent,
     ModifierUnePublicationComponent,
-    ModifierUneActualiteComponent
+    ModifierUneActualiteComponent,
+    AffichUneActualiteAdminComponent,
+    AffichUnePublicationAdminComponent,
+    AffichUnMessageAdminComponent 
   ],
   imports: [
      

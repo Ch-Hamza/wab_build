@@ -1,8 +1,7 @@
 <?php
     include "Crud.php";
     $crud= new Crud();
-    
-        $query="SELECT id,adresse,mail,tel1,tel2,fax,facebook,linkedin,twitter FROM contact where id='1'";
+        $query="SELECT COUNT(id) FROM contact_form";
         $data=$crud->getData($query);
          echo json_encode($data);
     

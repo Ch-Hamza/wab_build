@@ -4,4 +4,5 @@ export class actualite {
     titre: string;
     contenu: string;
     datee: Date;
+    fichier: string;
 }

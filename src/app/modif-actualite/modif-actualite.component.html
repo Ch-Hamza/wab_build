@@ -92,8 +92,11 @@ inner header end-->
         <div class ="form-group">
           <label  class="col-sm-4 control-label">image</label>
           <div class="col-sm-4">
-          <input type="file" (change)="onFileChanged($event)" name="fileToUpload" id="fileToUpload">
-          </div>
+          <input type="file"
+               ngFileSelect
+               [options]="options"
+               (onUpload)="handleUpload($event)"
+                 (beforeUpload)="beforeUpload($event)"></div>
         </div>
 
         <div class="form-group">

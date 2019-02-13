@@ -3,6 +3,7 @@ import { NgModule ,CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA} from '@angular/core
 import {StorageServiceModule} from 'angular-webstorage-service';
 import{MDBBootstrapModule} from 'angular-bootstrap-md';
 //import {NgxImageZoomModule} from 'ngx-image-zoom';
+import { Ng2UploaderModule } from 'ng2-uploader';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -61,7 +62,8 @@ import { AffichUnMessageAdminComponent } from './affich-un-message-admin/affich-
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule , 
+    HttpClientModule ,
+    Ng2UploaderModule,
     ReactiveFormsModule, 
     StorageServiceModule,
     MDBBootstrapModule.forRoot()

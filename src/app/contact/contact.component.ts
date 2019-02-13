@@ -21,8 +21,8 @@ export class ContactComponent implements OnInit {
   constructor(private router: Router, private dataService: DataService, private app: AppComponent) {
     app.EspaceAdmin = false;
     this.dataService.getContact().subscribe(res => {
-      this.contact = res;
-      console.log(this.contact);
+      this.contact = res[0];
+      console.log(res);
     });
   }
 

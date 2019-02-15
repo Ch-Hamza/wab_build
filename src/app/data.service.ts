@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { getLocaleDateFormat } from '@angular/common';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
-import {Observable} from 'rxjs';
+import { Observable } from 'rxjs';
 
 
 @Injectable({
@@ -98,16 +98,16 @@ export class DataService {
     return this.Http.post("http://localhost/Back/supprimerActualite.php/", { 'id': id })
   }
 
-  getInfoContact(id){
-    return this.Http.get('http://localhost/Back/infocontact.php?id=' + id); 
+  getInfoContact(id) {
+    return this.Http.get('http://localhost/Back/infocontact.php?id=' + id);
   }
-  modifierInfoContact(info){
+  modifierInfoContact(info) {
     return this.Http.post("http://localhost/Back/modifierInfoContact.php", info);
   }
   getMessages() {
     return this.Http.get('http://localhost/Back/messages.php');
   }
-  getMails(){
+  getMails() {
     return this.Http.get('http://localhost/Back/mails.php');
   }
   getMessage(id) {
@@ -117,17 +117,18 @@ export class DataService {
     return this.Http.get('http://localhost/Back/messagespage.php?id=' + id);
   }
   getMessagessnum() {
-      return this.Http.get('http://localhost/Back/messagesnum.php');
+    return this.Http.get('http://localhost/Back/messagesnum.php');
   }
   getMailspage(id) {
-        return this.Http.get('http://localhost/Back/mailspage.php?id=' + id);
-    }
+    return this.Http.get('http://localhost/Back/mailspage.php?id=' + id);
+  }
   getMailsnum() {
-        return this.Http.get('http://localhost/Back/mailsnum.php');
-    }
+    return this.Http.get('http://localhost/Back/mailsnum.php');
+  }
   addImage(fd) {
-    return this.Http.post('http://localhost/Back/addFile.php' , fd, {
-        headers: new HttpHeaders().set('Content-Type', 'application/json'),
-        responseType: 'text'});
+    return this.Http.post('http://localhost/Back/addFile.php', fd, {
+      headers: new HttpHeaders().set('Content-Type', 'application/json'),
+      responseType: 'text'
+    });
   }
 }

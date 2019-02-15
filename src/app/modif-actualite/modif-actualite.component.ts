@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {AppComponent} from '../app.component';  
 import {actualite} from '../actualite';
 import * as data from '../../assets/contenu.json';
+declare var alert;
 import {
   Router
 } from '@angular/router';
@@ -54,12 +55,36 @@ selectedFile: File
       });*/
     
   }
-  
-  ngOnInit() { 
+    uploadFile: any;
+    hasBaseDropZoneOver: boolean = false;
+    options: Object = {
+        url: 'http://localhost/back/upload.php'
+    };
+    sizeLimit = 2000000;
+
+    handleUpload(data): void {
+        if (data && data.response) {
+            data = JSON.parse(data.response);
+            this.uploadFile = data;
+        }
+    }
+
+    fileOverBase(e:any):void {
+        this.hasBaseDropZoneOver = e;
+    }
+
+    beforeUpload(uploadingFile): void {
+        if (uploadingFile.size > this.sizeLimit) {
+            uploadingFile.setAbort();
+            alert('File is too large');
+        }
+    }
+
+  ngOnInit(){
     console.log(this.app.Adminn);
     console.log(localStorage.getItem('name'),"hhhh");
     if (localStorage.getItem('name') )
-    { this.test =true}
+    { this.test = true}
     else this.test=false ;
     console.log(this.test);
   }
@@ -92,6 +117,7 @@ formOff(){
 
     model = new actualite();
     ajouterActualite(){
+       // this.handleUpload(this.event);
       this.dataService
         .ajouterActualite(this.model)
         .subscribe(()=> this.goBack());
@@ -107,7 +133,7 @@ formOff(){
       }
   }
 
-  onFileChanged(event) {
+  /*onFileChanged(event) {
     if (event.target.files && event.target.files[0]) {
 
     this.selectedFile = event.target.files[0];
@@ -125,7 +151,7 @@ formOff(){
      console.log(fd);
      
      
-  }}
+  }}*/
 
   fileChange(event) {
    

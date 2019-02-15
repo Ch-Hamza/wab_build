@@ -9,13 +9,11 @@ import{Router} from '@angular/router';
 })
 
 export class HeaderAdminComponent implements OnInit {
-  test : any ;
+
   constructor(private app:AppComponent,private router:Router) { }
 
   ngOnInit() {
-    if (localStorage.getItem['name'] )
-    { this.test =true}
-    else this.test=false ;
+   
   }
 logout(){
         this.app.Adminn=false;

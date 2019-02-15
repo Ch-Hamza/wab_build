@@ -79,13 +79,16 @@ inner header end-->
           </div>
         </div>
 
-        <div class ="form-group">
+        <!-- div class ="form-group">
           <label  class="col-sm-4 control-label">fichier</label>
           <div class="col-sm-4">
             <input type="file" (change)="onFileChanged($event)" name="fileToUpload" id="fileToUpload">
           </div>
-        </div>
+        </div -->
 
+         
+        <input type="file" (change)="fileChange($event)"   placeholder="Upload file" accept=".pdf">
+       
         <div class="form-group">
           <div class="col-sm-offset-4 col-sm-10">
             <button type="submit" name="ok" class="btn btn-primary">Ajouter publication</button>

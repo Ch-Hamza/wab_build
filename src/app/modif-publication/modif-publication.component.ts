@@ -6,7 +6,8 @@ import {
 } from '@angular/router';
 import {
   DataService
-} from '../data.service';   
+} from '../data.service'; 
+import {HttpClient, HttpClientModule, HttpResponse, HttpEventType, HttpHeaders, HttpParams} from '@angular/common/http';   
 
 @Component({
   selector: 'app-modif-publication',
@@ -20,7 +21,7 @@ publications;
     pages=[];
     n;
     nb;
-constructor(private router: Router, private dataService: DataService,private app:AppComponent) {
+constructor(private Http: HttpClient , private router: Router, private dataService: DataService,private app:AppComponent) {
     app.EspaceAdmin=true;
     this.dataService.getPublicationsnum().subscribe(res => {
         if(res[0]['COUNT(id)']%8==0){
@@ -67,7 +68,7 @@ constructor(private router: Router, private dataService: DataService,private app
       this.dataService
         .ajouterPublication(this.model)
         .subscribe(()=> this.goBack());
-        location.reload();
+        location.reload(); 
   }
    goBack(){
     this.router.navigate(['/pub']);
@@ -95,5 +96,33 @@ constructor(private router: Router, private dataService: DataService,private app
             this.pages.push(i);
         }
     }
+
+ 
+   
+  fileChange(event) {
+   
+
+    let fileList: FileList = event.target.files;
+    if(fileList.length > 0) {
+        let file: File = fileList[0];
+        let formData:FormData = new FormData();
+        formData.append('uploadFile', file, file.name);
+        let headers = new HttpHeaders();
+        /** In Angular 5, including the header Content-Type can invalidate your request */
+         headers.append('Content-Type', 'multipart/form-data');
+        headers.append('Accept', 'application/json');
+      //  let options = new RequestOptions({ headers: headers });
+        const options = {
+          params: new HttpParams(),
+          headers:  headers
+        };
+        this.Http.post(`http://localhost/Back/uploadPdf.php`, formData, options)
+            
+            .subscribe(
+                data => console.log('success'),
+                error => console.log(error)
+            )
+    }
+} 
 }
  

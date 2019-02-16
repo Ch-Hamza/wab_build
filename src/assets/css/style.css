@@ -19,6 +19,10 @@
     src: url('../fonts/Lato-Regular.ttf');
 }
 
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
 body {
     font-family: 'Open Sans', sans-serif;
     height: auto;
@@ -2892,7 +2896,7 @@ a.btn-style-6.dark-skin:hover {
 }
 
 .newsletter-form {
-    width: 70%;
+    width: 50%;
     margin: 0px auto;
     background: #fff;
 }
@@ -2914,11 +2918,13 @@ a.btn-style-6.dark-skin:hover {
 .newsletter-container input[type="submit"] {
     line-height: 52px;
     border: none;
-    width: 17%;
+    width:100%;
     background: #ed1c24;
     color: #fff;
     float: right;
     font-weight: bold;
+    font-size: 25px;
+
 }
 
 .foot li:last-child {

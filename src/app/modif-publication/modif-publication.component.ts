@@ -21,6 +21,7 @@ publications;
     pages=[];
     n;
     nb;
+fileList: FileList;
 constructor(private Http: HttpClient , private router: Router, private dataService: DataService,private app:AppComponent) {
     app.EspaceAdmin=true;
     this.dataService.getPublicationsnum().subscribe(res => {
@@ -65,10 +66,11 @@ constructor(private Http: HttpClient , private router: Router, private dataServi
     }
     model = new publication();
     ajouterPublication(){
+        this.fileupload();
       this.dataService
         .ajouterPublication(this.model)
-        .subscribe(()=> this.goBack());
-        location.reload(); 
+        .subscribe();
+
   }
    goBack(){
     this.router.navigate(['/pub']);
@@ -100,11 +102,13 @@ constructor(private Http: HttpClient , private router: Router, private dataServi
  
    
   fileChange(event) {
-   
+    this.fileList= event.target.files;
+    console.log(this.fileList[0].name);
+    this.model.lien=this.fileList[0].name;}
 
-    let fileList: FileList = event.target.files;
-    if(fileList.length > 0) {
-        let file: File = fileList[0];
+  fileupload(){
+    if(this.fileList.length > 0) {
+        let file: File = this.fileList[0];
         let formData:FormData = new FormData();
         formData.append('uploadFile', file, file.name);
         let headers = new HttpHeaders();

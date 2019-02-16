@@ -13,7 +13,7 @@ $path = 'C:\wamp\www\fichier\\';
 if (isset($_FILES['uploadFile'])) { 
 $originalName = $_FILES['uploadFile']['name'];
   $ext = '.'.pathinfo($originalName, PATHINFO_EXTENSION); 
-  $generatedName = md5($_FILES['uploadFile']['tmp_name']).$ext;
+  $generatedName = $originalName;
   $filePath = $path.$generatedName;
 
   if (!is_writable($path)) {

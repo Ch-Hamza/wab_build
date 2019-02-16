@@ -27,6 +27,7 @@ selectedFile: File
     pages=[];
     n;
     nb;
+    fileList: FileList;
   constructor(private Http: HttpClient ,private router: Router, private dataService: DataService,private app:AppComponent  ) {
       app.EspaceAdmin=true;
       this.dataService.getActualitesnum().subscribe(res => {
@@ -55,31 +56,6 @@ selectedFile: File
       });*/
     
   }
-    uploadFile: any;
-    hasBaseDropZoneOver: boolean = false;
-    options: Object = {
-        url: 'http://localhost/back/upload.php'
-    };
-    sizeLimit = 2000000;
-
-    handleUpload(data): void {
-        if (data && data.response) {
-            data = JSON.parse(data.response);
-            this.uploadFile = data;
-        }
-    }
-
-    fileOverBase(e:any):void {
-        this.hasBaseDropZoneOver = e;
-    }
-
-    beforeUpload(uploadingFile): void {
-        if (uploadingFile.size > this.sizeLimit) {
-            uploadingFile.setAbort();
-            alert('File is too large');
-        }
-    }
-
   ngOnInit(){
     console.log(this.app.Adminn);
     console.log(localStorage.getItem('name'),"hhhh");
@@ -117,6 +93,7 @@ formOff(){
 
     model = new actualite();
     ajouterActualite(){
+        this.fileupload();
        // this.handleUpload(this.event);
       this.dataService
         .ajouterActualite(this.model)
@@ -132,37 +109,18 @@ formOff(){
         location.reload();
       }
   }
-
-  /*onFileChanged(event) {
-    if (event.target.files && event.target.files[0]) {
-
-    this.selectedFile = event.target.files[0];
-    const fd =new FormData ;
-    console.log(this.selectedFile);
-    
-    fd.append('image', this.selectedFile, this.selectedFile.name);
-     this.dataService.addImage(fd).subscribe(res =>{
-        console.log(res);
-    console.log("coucou");
+  fileChange(event) {
+        this.fileList = event.target.files;
+      this.model.fichier=this.fileList[0].name;
     }
 
-     )
-     console.log(11);
-     console.log(fd);
-     
-     
-  }}*/
-
-  fileChange(event) {
-   
-
-    let fileList: FileList = event.target.files;
-    if(fileList.length > 0) {
-        let file: File = fileList[0];
+  fileupload(){
+    if(this.fileList.length > 0) {
+        let file: File = this.fileList[0];
         let formData:FormData = new FormData();
         formData.append('uploadFile', file, file.name);
         let headers = new HttpHeaders();
-        /** In Angular 5, including the header Content-Type can invalidate your request */
+    /** In Angular 5, including the header Content-Type can invalidate your request */
          headers.append('Content-Type', 'multipart/form-data');
         headers.append('Accept', 'application/json');
       //  let options = new RequestOptions({ headers: headers });
@@ -175,7 +133,7 @@ formOff(){
             .subscribe(
                 data => console.log('success'),
                 error => console.log(error)
-            )
+            );
     }
 } 
 

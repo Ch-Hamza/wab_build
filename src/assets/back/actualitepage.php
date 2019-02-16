@@ -11,7 +11,7 @@
         else{
         $f=6;
          $d=$n-6*$i;}
-        $query="SELECT id,titre,datee,contenu FROM actualite LIMIT $d,$f";
+        $query="SELECT id,titre,datee,contenu,fichier FROM actualite LIMIT $d,$f";
         $data=$crud->getData($query);
          echo json_encode($data);
     

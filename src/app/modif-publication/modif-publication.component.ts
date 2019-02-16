@@ -69,8 +69,8 @@ constructor(private Http: HttpClient , private router: Router, private dataServi
         this.fileupload();
       this.dataService
         .ajouterPublication(this.model)
-        .subscribe();
-
+        .subscribe(()=> this.goBack());
+        location.reload();
   }
    goBack(){
     this.router.navigate(['/pub']);

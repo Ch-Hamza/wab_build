@@ -68,6 +68,10 @@ export class PublicationComponent implements OnInit {
 
   ngOnInit() {
   }
+ run(url){
+        var URL = "http://localhost/fichier/"+url;
+        window.open(URL, null);
+    }
   getpub(i) {
     this.dataService.getPublicationspage(i).subscribe(res => {
       this.publications = res;

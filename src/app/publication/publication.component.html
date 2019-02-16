@@ -16,7 +16,7 @@
             <p style="width: auto;overflow: hidden;text-overflow: ellipsis">{{publication.titre}}
             </p>
             <br>
-            <a href="../../assets/Publications/{{publication.lien}}" target="_blank">
+            <a style="cursor:pointer;" (click)="run(publication.lien)" target="_blank">
               <span class="read-more">charger le PDF
                 <i class="fa fa-angle-right"></i>
               </span>

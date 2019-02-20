@@ -19,7 +19,7 @@ inner header end-->
   </div>
 <!----------------   Affichage commence ici   --------------->
 <div id="liste" *ngIf="!newsletter">
-  <table class="table table-bordered table-hover" >
+  <table class="table table-bordered table-hover" style="table-layout: fixed;width: 100%">
 
     <tr class="active ">
       <th >nom </th>
@@ -31,12 +31,12 @@ inner header end-->
       <th >action</th>
     </tr>
     <tr *ngFor="let message of messages">
-      <td>{{message.id}}</td>
-      <td>{{message.prenom}}</td>
-      <td>{{message.telephone}}</td>
-      <td>{{message.email}}</td>
-      <td>{{message.sujet}}</td>
-      <td>{{message.messagee}}</td>
+      <td style="overflow: hidden">{{message.id}}</td>
+      <td style="overflow: hidden">{{message.prenom}}</td>
+      <td style="overflow: hidden">{{message.telephone}}</td>
+      <td style="overflow: hidden">{{message.email}}</td>
+      <td style="overflow: hidden">{{message.sujet}}</td>
+      <td style="overflow: hidden">{{message.messagee}}</td>
       <td width=275> 
           <a class="btn btn-info"   routerLink="/unmessage/{{message.id}}" >Detail</a>  
       </td>
@@ -57,13 +57,13 @@ inner header end-->
 </div>
 <!----------------   fin Tableau   --------------->
 <div id="liste" *ngIf="newsletter">
-  <table class="table table-bordered table-hover" >
+  <table class="table table-bordered table-hover" style="table-layout: fixed;width: 100%">
 
     <tr class="active ">
       <th >adresse email</th>
     </tr>
     <tr *ngFor="let mail of mails">
-      <td>{{mail.email}}</td>
+      <td style="overflow: hidden">{{mail.email}}</td>
 
  
     </tr>

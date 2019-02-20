@@ -21,7 +21,7 @@ inner header end-->
 </div>
 <!----------------   Affichage Historique commence ici   --------------->
 <div id="liste" *ngIf="!formOnOff">
-  <table class="table table-bordered table-hover" >
+  <table class="table table-bordered table-hover"  style="table-layout: fixed;width: 100%">
 
     <tr class="active ">
       <th >Id actualité</th>
@@ -32,13 +32,13 @@ inner header end-->
     </tr>
 
     <tr *ngFor="let actualite of actualites">
-      <td>{{actualite.id}}</td>
-      <td>{{actualite.titre}}</td>
-      <td>{{actualite.datee}}</td>
-      <td>{{actualite.contenu}}</td>
+      <td style="overflow: hidden">{{actualite.id}}</td>
+      <td style="overflow: hidden">{{actualite.titre}}</td>
+      <td style="overflow: hidden">{{actualite.datee}}</td>
+      <td style="overflow: hidden">{{actualite.contenu}}</td>
       <td width=275> 
-          <a class="btn btn-info" routerLink="/uneactualite/{{actualite.id}}"  >Detail</a> 
-          <a class="btn btn-success"  routerLink="/actualite/{{actualite.id}}" >Edit</a>
+          <a class="btn btn-info" routerLink="/uneactualite/{{actualite.id}}"  >Detail</a> &nbsp;
+          <a class="btn btn-success"  routerLink="/actualite/{{actualite.id}}" >Edit</a>&nbsp;
           <a class="btn btn-danger" (click)="supprimerActualite(actualite.id)" >Delete</a >
       </td>
     </tr>

@@ -77,6 +77,13 @@ export class PublicationComponent implements OnInit {
       this.publications = res;
       this.publications.reverse();
       console.log(this.publications);
+        let compteurAnnee = 0;
+        this.publications.map(
+            (a) => {
+                compteurAnnee++;
+                a.verif = compteurAnnee % 4 ? false : true;
+                return a;
+            });
     });
     this.pages = [];
     if (this.n - i >= 5) {

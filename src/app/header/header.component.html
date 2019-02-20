@@ -9,11 +9,11 @@
         <ul class="left topbar-blocks">
           <li>
             <a href="mailto:info@yourdomain.com">
-              <i class="fa fa-envelope" aria-hidden="true"></i> contact@wab-expert.com</a>
+              <i class="fa fa-envelope" aria-hidden="true"></i> {{contact.mail}}</a>
           </li>
           <li>
             <a href="tel:+0801 2345 6789">
-              <i class="fa fa-phone" aria-hidden="true"></i> (+216) 71 948 214 </a>
+              <i class="fa fa-phone" aria-hidden="true"></i> {{contact.tel1}} </a>
           </li>
         </ul>
       </div>
@@ -68,7 +68,7 @@
               <ul class="nav navbar-nav">
 
                 <li class="dropdown  mega-dropdown">
-                  <a href="/" > Accueil </a>
+                  <a href="/"> Accueil </a>
                 </li>
                 <li class="dropdown mega-dropdown">
                   <a routerLink="/cabinet" routerLinkActive="activated">Le cabinet</a>
@@ -98,5 +98,3 @@
     <!-- Row End -->
   </div>
 </div>
-
-

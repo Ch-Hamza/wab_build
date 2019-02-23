@@ -3788,7 +3788,6 @@ a.btn-style-6.dark-skin:hover {
         width: 52%;
     }
     .newsletter-container input[type="submit"] {
-        width: 25%;
     }
     .flex-direction-nav .flex-prev {
         opacity: 1;
@@ -3843,6 +3842,7 @@ a.btn-style-6.dark-skin:hover {
     }
     .copyright {
         text-align: center;
+        margin-top: 40px;
     }
     .foot {
         text-align: center;
@@ -5900,6 +5900,7 @@ select {
 
 .big-tabs li {
     min-width: 200px;
+    max-width: 200px;
 }
 
 .big-tabs li:hover .big-tabs-icon {

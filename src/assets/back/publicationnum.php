@@ -7,19 +7,15 @@
   $dbconfig->__construct();
   $connection=$dbconfig->connection;
   $connection->set_charset("utf8");
-    
-        $query="SELECT  COUNT(id) FROM publication";
-        $result = $connection->query($query);
-        $myArray = array();
-        if ($result) {
-        
-            while($row = $result->fetch_array(MYSQL_ASSOC)) {
-                    $myArray[] = $row;
-            }
-            echo json_encode($myArray);
-        }
-        
-        $result->close();
+  $query2="SELECT COUNT(id) FROM publication";
+  $result2 = $connection->query($query2);
+  $data2 = array();
+  if ($result2) {
+      $row = $result2->fetch_row();
+      $data2[] = $row;
+      echo json_encode(array('count'=>$data2[0][0]));
+  }
+        $result2->close();
 
         
     

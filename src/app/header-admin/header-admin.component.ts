@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {AppComponent} from '../app.component';
-import{Router} from '@angular/router';
+import { AppComponent } from '../app.component';
+import { Router } from '@angular/router';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-header-admin',
@@ -9,15 +10,20 @@ import{Router} from '@angular/router';
 })
 
 export class HeaderAdminComponent implements OnInit {
-
-  constructor(private app:AppComponent,private router:Router) { }
+  contact
+  constructor(private router: Router, private dataService: DataService, private app: AppComponent) {
+    this.dataService.getContact().subscribe(res => {
+      this.contact = res[0];
+      console.log(res);
+    });
+  }
 
   ngOnInit() {
-   
+
   }
-logout(){
-        this.app.Adminn=false;
-        localStorage.clear();
-        this.router.navigate(['/cabinet']) ;
-    }
+  logout() {
+    this.app.Adminn = false;
+    localStorage.clear();
+    this.router.navigate(['/cabinet']);
+  }
 }

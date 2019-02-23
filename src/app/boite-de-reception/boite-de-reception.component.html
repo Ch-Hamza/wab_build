@@ -22,13 +22,13 @@ inner header end-->
   <table class="table table-bordered table-hover" style="table-layout: fixed;width: 100%">
 
     <tr class="active ">
-      <th >nom </th>
-      <th >prenom</th>
-      <th >telephone</th>
-      <th >email</th>
-      <th >sujet</th>
-      <th >message</th>
-      <th >action</th>
+      <th style="overflow: hidden">nom </th>
+      <th style="overflow: hidden">prenom</th>
+      <th style="overflow: hidden">telephone</th>
+      <th style="overflow: hidden">email</th>
+      <th style="overflow: hidden">sujet</th>
+      <th style="overflow: hidden">message</th>
+      <th style="overflow: hidden">action</th>
     </tr>
     <tr *ngFor="let message of messages">
       <td style="overflow: hidden">{{message.id}}</td>

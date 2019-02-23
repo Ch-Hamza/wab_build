@@ -33,13 +33,12 @@ export class PublicationComponent implements OnInit {
   constructor(private router: Router, private dataService: DataService, private app: AppComponent) {
     app.EspaceAdmin = false;
     this.dataService.getPublicationsnum().subscribe(res => {
-      if (res[0]['COUNT(id)'] % 8 == 0) {
-        this.n = res[0]['COUNT(id)'] / 8;
+      if (res['count'] % 8 == 0) {
+        this.n = res['count'] / 8;
       }
       else {
-        this.n = (res[0]['COUNT(id)'] / 8) + 1;
+        this.n = (res['count'] / 8) + 1;
         this.n = parseInt(this.n);
-        console.log(this.n);
       }
       if (this.n > 5) {
         this.nb = 5;
@@ -48,11 +47,9 @@ export class PublicationComponent implements OnInit {
       for (let i = 1; i <= this.nb; i++) {
         this.pages.push(i);
       }
-      console.log(this.pages);
     });
-    //this.publications = data['publications'];
     this.dataService.getPublicationspage(1).subscribe(res => {
-      this.publications = res;
+      this.publications = res['data']
       this.publications.reverse();
       let compteurAnnee = 0;
       this.publications.map(
@@ -61,7 +58,6 @@ export class PublicationComponent implements OnInit {
           a.verif = compteurAnnee % 4 ? false : true;
           return a;
         });
-      console.log(this.publications);
     });
 
   }
@@ -74,16 +70,15 @@ export class PublicationComponent implements OnInit {
   }
   getpub(i) {
     this.dataService.getPublicationspage(i).subscribe(res => {
-      this.publications = res;
+      this.publications = res['data'];
       this.publications.reverse();
-      console.log(this.publications);
-        let compteurAnnee = 0;
-        this.publications.map(
-            (a) => {
-                compteurAnnee++;
-                a.verif = compteurAnnee % 4 ? false : true;
-                return a;
-            });
+      let compteurAnnee = 0;
+      this.publications.map(
+        (a) => {
+          compteurAnnee++;
+          a.verif = compteurAnnee % 4 ? false : true;
+          return a;
+        });
     });
     this.pages = [];
     if (this.n - i >= 5) {

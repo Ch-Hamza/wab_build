@@ -8,7 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
   exit;
 }
 
-$path = 'C:\wamp\www\image\\';
+$path = 'C:\wamp64\www\image\\';
 
 if (isset($_FILES['uploadFile'])) { 
 $originalName = $_FILES['uploadFile']['name'];

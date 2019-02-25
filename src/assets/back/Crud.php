@@ -34,6 +34,14 @@ class Crud extends DbConfig{
             return true;
         }
     }
+    public function correct($t){
+         $pos=0;
+        while(strpos($t, "'",$pos)){
+        $t = substr_replace($t, "'", strpos($t, "'",$pos), 0);
+        $pos=strpos($t, "'",$pos)+2;
+}
+return $t;
+    }
         
     public function escape_string($value){
         return $this->connection->real_escape_string($value);

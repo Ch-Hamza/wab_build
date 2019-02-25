@@ -71,8 +71,7 @@ export class ModifPublicationComponent implements OnInit {
         this.fileupload();
         this.dataService
             .ajouterPublication(this.model)
-            .subscribe(() => this.goBack());
-        location.reload();
+            .subscribe(() => location.reload());
     }
     goBack() {
         this.router.navigate(['/pub']);
@@ -81,8 +80,7 @@ export class ModifPublicationComponent implements OnInit {
         if (confirm("Voulez vous vraiment supprimer cette publication")) {
             this.dataService
                 .supprimerPublication(id)
-                .subscribe(() => this.goBack());
-            location.reload();
+                .subscribe(() => location.reload());
         }
     }
     getpub(i) {

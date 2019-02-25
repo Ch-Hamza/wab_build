@@ -97,16 +97,15 @@ formOff(){
        // this.handleUpload(this.event);
       this.dataService
         .ajouterActualite(this.model)
-        .subscribe(()=> this.goBack());
-        location.reload();
+        .subscribe(()=>location.reload());
   }
 
     supprimerActualite(id){
       if(confirm("Voulez vous vraiment supprimer cette actualité") ){
       this.dataService
         .supprimerActualite(id)
-        .subscribe(()=> this.goBack());
-        location.reload();
+        .subscribe(()=>location.reload());
+
       }
   }
   fileChange(event) {

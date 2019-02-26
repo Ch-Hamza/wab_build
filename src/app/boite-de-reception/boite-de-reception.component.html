@@ -22,6 +22,7 @@ inner header end-->
   <table class="table table-bordered table-hover" style="table-layout: fixed;width: 100%">
 
     <tr class="active ">
+      <th style="overflow: hidden">id </th>
       <th style="overflow: hidden">nom </th>
       <th style="overflow: hidden">prenom</th>
       <th style="overflow: hidden">telephone</th>
@@ -32,6 +33,7 @@ inner header end-->
     </tr>
     <tr *ngFor="let message of messages">
       <td style="overflow: hidden">{{message.id}}</td>
+      <td style="overflow: hidden">{{message.nom}}</td>
       <td style="overflow: hidden">{{message.prenom}}</td>
       <td style="overflow: hidden">{{message.telephone}}</td>
       <td style="overflow: hidden">{{message.email}}</td>

@@ -20,7 +20,6 @@ export class ActualiteComponent implements OnInit {
    console.log(id);
    this.dataService.getActualite(id).subscribe(res => {
        this.actualite = res[0];
-       console.log(this.actualite);
    });
   }
 }

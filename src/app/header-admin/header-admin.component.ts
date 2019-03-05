@@ -14,7 +14,6 @@ export class HeaderAdminComponent implements OnInit {
   constructor(private router: Router, private dataService: DataService, private app: AppComponent) {
     this.dataService.getContact().subscribe(res => {
       this.contact = res[0];
-      console.log(res);
     });
   }
 

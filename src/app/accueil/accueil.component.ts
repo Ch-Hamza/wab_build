@@ -37,7 +37,6 @@ export class AccueilComponent implements OnInit {
           }
 
         }
-        console.log("coucou", this.$posts);
 
       },
 
@@ -60,9 +59,6 @@ export class AccueilComponent implements OnInit {
         }
 
       }
-      console.log(res.length);
-
-      console.log(this.actualites);
     });
 
 
@@ -72,7 +68,6 @@ export class AccueilComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log(localStorage.getItem('name'));
 
   }
 

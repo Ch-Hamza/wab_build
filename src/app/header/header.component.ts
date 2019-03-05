@@ -13,11 +13,9 @@ export class HeaderComponent implements OnInit {
   constructor(private router: Router, private dataService: DataService, private app: AppComponent) {
     this.dataService.getContact().subscribe(res => {
       this.contact = res[0];
-      console.log(res);
     });
     if (localStorage.getItem('name')) { this.test = true }
     else this.test = false;
-    console.log(this.test);
   }
 
   ngOnInit() {

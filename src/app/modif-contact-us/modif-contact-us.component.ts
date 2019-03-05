@@ -27,10 +27,8 @@ export class ModifContactUsComponent implements OnInit {
       { this.test =true;}
       else this.test=false ;
     let id = this.activatedRoute.snapshot.params['id'];
-    console.log(id);
     this.dataService.getInfoContact(id).subscribe(res => {
         this.model = res[0];
-        console.log(this.model);  
     });
    /* if (localStorage.getItem('name') )
     { this.test =true}
@@ -42,7 +40,6 @@ export class ModifContactUsComponent implements OnInit {
     this.dataService
         .modifierInfoContact(this.model)
         .subscribe(()=> this.goBack());
-       console.log(this.model);
        location.reload();
       }
     }

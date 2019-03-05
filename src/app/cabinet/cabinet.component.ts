@@ -20,19 +20,13 @@ export class CabinetComponent implements OnInit {
     app.EspaceAdmin = false;
     this.dataserv.getContact().subscribe(res => {
       this.contact = res[0];
-      console.log(res);
     });
     this.dataserv.getPhoto("https://jsonplaceholder.typicode.com/photos").subscribe(
       (data: any) => {
       this.$photos = data;
         console.log(this.$photos);
       }
-
-
-
-    )
-
-
+    );
   }
 
   ngOnInit() {

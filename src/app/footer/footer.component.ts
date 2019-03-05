@@ -16,14 +16,13 @@ export class FooterComponent implements OnInit {
 
 
     console.log(this.model)
-    this.dataService.addNewsletter(this.model).subscribe(res => { console.log(res) });
+    this.dataService.addNewsletter(this.model).subscribe(res => {});
     alert('thank you ! you are now subscribed to our newsletter')
   }
   constructor(private router: Router, private dataService: DataService, private app: AppComponent) {
     app.EspaceAdmin = false;
     this.dataService.getContact().subscribe(res => {
       this.contact = res[0];
-      console.log(res);
     });
   }
 

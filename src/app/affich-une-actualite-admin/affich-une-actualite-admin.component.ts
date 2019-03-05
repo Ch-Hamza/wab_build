@@ -17,10 +17,8 @@ export class AffichUneActualiteAdminComponent implements OnInit {
 
   ngOnInit() {
     let id = this.activatedRoute.snapshot.params['id'];
-   console.log(id);
    this.dataService.getActualite(id).subscribe(res => {
        this.model = res[0];
-       console.log(this.model);
    });
   }
 

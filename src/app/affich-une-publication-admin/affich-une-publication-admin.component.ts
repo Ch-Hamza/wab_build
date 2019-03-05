@@ -17,10 +17,8 @@ export class AffichUnePublicationAdminComponent implements OnInit {
 
   ngOnInit() {
     let id = this.activatedRoute.snapshot.params['id'];
-    console.log(id);
     this.dataService.getPublication(id).subscribe(res => {
         this.model = res[0];
-        console.log(this.model);
     });
   }
 

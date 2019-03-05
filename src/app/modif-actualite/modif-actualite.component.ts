@@ -35,20 +35,17 @@ selectedFile: File
               this.n= res[0]['COUNT(id)']/6;}
           else
           {this.n= (res[0]['COUNT(id)']/6)+1;
-              this.n=parseInt(this.n);
-              console.log(this.n);}
+              this.n=parseInt(this.n);}
           if(this.n>5){
               this.nb=5;}
           else this.nb=this.n;
           for(let i=1;i<=this.nb;i++){
               this.pages.push(i);
           }
-          console.log(this.pages);
       });
       this.dataService.getActualitespage(1).subscribe(res => {
           this.actualites = res;
           this.actualites.reverse();
-          console.log(this.actualites);
       });
       /*this.dataService.getActualites().subscribe(res => {
         this.actualites = res;
@@ -57,18 +54,14 @@ selectedFile: File
     
   }
   ngOnInit(){
-    console.log(this.app.Adminn);
-    console.log(localStorage.getItem('name'),"hhhh");
     if (localStorage.getItem('name') )
     { this.test = true}
     else this.test=false ;
-    console.log(this.test);
   }
     getact(i){
         this.dataService.getActualitespage(i).subscribe(res => {
             this.actualites = res;
             this.actualites.reverse();
-            console.log(this.actualites);
         });
         this.pages=[];
         if(this.n-i>=5){

@@ -31,7 +31,6 @@ export class ModifPublicationComponent implements OnInit {
             else {
             this.n = (res['count'] / 8) + 1;
                 this.n = parseInt(this.n);
-                console.log(this.n);
             }
             if (this.n > 5) {
                 this.nb = 5;
@@ -40,12 +39,10 @@ export class ModifPublicationComponent implements OnInit {
             for (let i = 1; i <= this.nb; i++) {
                 this.pages.push(i);
             }
-            console.log(this.pages);
         });
         this.dataService.getPublicationspage(1).subscribe(res => {
             this.publications = res['data'];
             this.publications.reverse();
-            console.log(this.publications);
         });
 
         /*this.dataService.getPublications().subscribe(res => {
@@ -57,7 +54,6 @@ export class ModifPublicationComponent implements OnInit {
     ngOnInit() {
         if (localStorage.getItem('name')) { this.test = true }
         else this.test = false;
-        console.log(this.test);
     }
     formOn() {
         this.formOnOff = true;
@@ -87,7 +83,6 @@ export class ModifPublicationComponent implements OnInit {
         this.dataService.getPublicationspage(i).subscribe(res => {
             this.publications = res;
             this.publications.reverse();
-            console.log(this.publications);
         });
         this.pages = [];
         if (this.n - i >= 5) {

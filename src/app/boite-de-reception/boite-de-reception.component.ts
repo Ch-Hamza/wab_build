@@ -36,20 +36,17 @@ export class BoiteDeReceptionComponent implements OnInit {
               this.n= res[0]['COUNT(id)']/10;}
           else
           {this.n= (res[0]['COUNT(id)']/10)+1;
-              this.n=parseInt(this.n);
-              console.log(this.n);}
+              this.n=parseInt(this.n);}
           if(this.n>5){
               this.nb=5;}
           else this.nb=this.n;
           for(let i=1;i<=this.nb;i++){
               this.pages.push(i);
           }
-          console.log(this.pages);
       });
       this.dataService.getMessagespage(1).subscribe(res => {
           this.messages = res;
           this.messages.reverse();
-          console.log(this.messages);
       });
 
       this.dataService.getMailsnum().subscribe(res => {
@@ -57,20 +54,17 @@ export class BoiteDeReceptionComponent implements OnInit {
               this.n2= res[0]['COUNT(id)']/10;}
           else
           {this.n2= (res[0]['COUNT(id)']/10)+1;
-              this.n2=parseInt(this.n2);
-              console.log(this.n2);}
+              this.n2=parseInt(this.n2);}
           if(this.n2>5){
               this.nb2=5;}
           else this.nb2=this.n2;
           for(let i=1;i<=this.nb2;i++){
               this.pages2.push(i);
           }
-          console.log(this.pages2);
       });
       this.dataService.getMailspage(1).subscribe(res => {
           this.mails = res;
           this.mails.reverse();
-          console.log(this.mails);
       });
       /*this.dataService.getMessages().subscribe(res => {
         this.messages = res;
@@ -91,7 +85,6 @@ export class BoiteDeReceptionComponent implements OnInit {
         this.dataService.getMessagespage(i).subscribe(res => {
             this.messages = res;
             this.messages.reverse();
-            console.log(this.messages);
         });
         this.pages=[];
         if(this.n-i>=5){
@@ -106,7 +99,6 @@ export class BoiteDeReceptionComponent implements OnInit {
         this.dataService.getMailspage(i).subscribe(res => {
             this.mails = res;
             this.mails.reverse();
-            console.log(this.mails);
         });
         this.pages2=[];
         if(this.n2-i>=5){

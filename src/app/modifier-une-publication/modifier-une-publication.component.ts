@@ -28,12 +28,9 @@ export class ModifierUnePublicationComponent implements OnInit {
   ngOnInit() {
     if (localStorage.getItem('name')) { this.test = true }
     else this.test = false;
-    console.log(this.test);
     let id = this.activatedRoute.snapshot.params['id'];
-    console.log(id);
     this.dataService.getPublication(id).subscribe(res => {
       this.model = res[0];
-      console.log(this.model);
     });
   }
   modifierPublication() {
@@ -41,8 +38,6 @@ export class ModifierUnePublicationComponent implements OnInit {
       this.dataService
         .modifierPublication(this.model)
         .subscribe(() => this.goBack());
-      console.log(this.model);
-
     }
   }
   goBack() {

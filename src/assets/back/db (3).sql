@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client: localhost
--- Généré le: Dim 24 Mars 2019 à 20:42
+-- Généré le: Dim 24 Mars 2019 à 21:21
 -- Version du serveur: 5.6.12-log
 -- Version de PHP: 5.4.16
 
@@ -63,7 +63,7 @@ CREATE TABLE IF NOT EXISTS `admin` (
 --
 
 INSERT INTO `admin` (`username`, `password`, `email`) VALUES
-('chayma', 'root', 'chayma@root');
+('wabexpert', 'wabexpert', 'contact@wab-expert.com');
 
 -- --------------------------------------------------------
 

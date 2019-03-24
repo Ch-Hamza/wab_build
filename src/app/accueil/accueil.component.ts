@@ -70,5 +70,8 @@ export class AccueilComponent implements OnInit {
   ngOnInit() {
 
   }
-
+  run(url) {
+    var URL = "http://localhost/fichier/" + url;
+    window.open(URL, null);
+  }
 }

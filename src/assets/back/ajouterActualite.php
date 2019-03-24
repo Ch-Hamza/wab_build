@@ -9,7 +9,7 @@
  $f=$crud->correct($_POST->fichier);
 $sql = "INSERT INTO actualite ( titre, contenu, datee, fichier)
 VALUES ('$t', '$c', '$_POST->datee', '$f')";
-
+if($_POST->titre){
 $data=$crud->execute($sql);
- 
+} 
 ?>

@@ -25,10 +25,10 @@ inner header end-->
 
     <tr class="active ">
       <th style="overflow: hidden">Id actualité</th>
-      <th style="overflow: hidden">titre </th>
+      <th style="overflow: hidden">Titre </th>
       <th style="overflow: hidden">Date d'admission</th>
-      <th style="overflow: hidden">contenu</th>
-      <th style="overflow: hidden">action</th>
+      <th style="overflow: hidden">Contenu</th>
+      <th style="overflow: hidden">Action</th>
     </tr>
 
     <tr *ngFor="let actualite of actualites">
@@ -69,7 +69,7 @@ inner header end-->
  
 
         <div class="form-group">
-          <label  class="col-sm-4 control-label">titre</label>
+          <label  class="col-sm-4 control-label">Titre</label>
           <div class="col-sm-4">
             <input type="text" class="form-control" name="titre" placeholder="titre" [(ngModel)]="model.titre"  required>
           </div>
@@ -83,14 +83,14 @@ inner header end-->
         </div>
 
         <div class="form-group">
-          <label  class="col-sm-4 control-label">contenu</label>
+          <label  class="col-sm-4 control-label">Contenu</label>
           <div class="col-sm-4">
             <input type="text" class="form-control" name="contenu" placeholder="contenu"  [(ngModel)]="model.contenu" required>
           </div>
         </div>
 
         <div class ="form-group">
-          <label  class="col-sm-4 control-label">image</label>
+          <label  class="col-sm-4 control-label">Image</label>
           <div class="col-sm-4">
             <input type="file" (change)="fileChange($event)"   placeholder="Upload file" accept=".png , .jpeg , .jpg">
           </div>

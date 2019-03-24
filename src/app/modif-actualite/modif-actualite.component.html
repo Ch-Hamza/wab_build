@@ -26,16 +26,14 @@ inner header end-->
     <tr class="active ">
       <th style="overflow: hidden">Id actualité</th>
       <th style="overflow: hidden">titre </th>
-      <th style="overflow: hidden">Date d'admission</th>
-      <th style="overflow: hidden">contenu</th>
+      <th style="overflow: hidden">Date d'admission</th> 
       <th style="overflow: hidden">action</th>
     </tr>
 
     <tr *ngFor="let actualite of actualites">
       <td style="overflow: hidden">{{actualite.id}}</td>
       <td style="overflow: hidden">{{actualite.titre}}</td>
-      <td style="overflow: hidden">{{actualite.datee}}</td>
-      <td style="overflow: hidden">{{actualite.contenu}}</td>
+      <td style="overflow: hidden">{{actualite.datee}}</td> 
       <td width=275> 
           <a class="btn btn-info" routerLink="/uneactualite/{{actualite.id}}"  >Detail</a> &nbsp;
           <a class="btn btn-success"  routerLink="/actualite/{{actualite.id}}" >Edit</a>&nbsp;
@@ -82,12 +80,7 @@ inner header end-->
           </div>
         </div>
 
-        <div class="form-group">
-          <label  class="col-sm-4 control-label">contenu</label>
-          <div class="col-sm-4">
-            <input type="text" class="form-control" name="contenu" placeholder="contenu"  [(ngModel)]="model.contenu" required>
-          </div>
-        </div>
+        
 
         <div class ="form-group">
           <label  class="col-sm-4 control-label">image</label>

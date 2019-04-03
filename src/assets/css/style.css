@@ -2655,7 +2655,10 @@ a.btn-style-6.dark-skin:hover {
 }
 
 .footer-container {
-    background: url(../images/7.png) no-repeat;
+    background: linear-gradient(
+ rgba(0, 0, 0, 0.8), 
+ rgba(0, 0, 0, 0.8)
+ ), url(../images/7.png) no-repeat;
     background-size: cover;
     padding: 44px 0 15px 0;
 }
@@ -2664,7 +2667,7 @@ a.btn-style-6.dark-skin:hover {
     padding-top: 15px;
     font-size: 14px;
     line-height: 22px;
-    color: #867e7e;
+    color: #ffffff;
     margin-top: 8px;
 }
 
@@ -2742,7 +2745,7 @@ a.btn-style-6.dark-skin:hover {
 
 .footer-blocks li a {
     text-decoration: none;
-    color: #867e7e;
+    color: #ffffff;
     font-size: 14px;
 }
 
@@ -2758,7 +2761,7 @@ a.btn-style-6.dark-skin:hover {
 }
 
 .footer-address {
-    color: #867e7e;
+    color: #ffffff;
     font-size: 14px;
     position: relative;
     padding-left: 22px;
@@ -2780,7 +2783,7 @@ a.btn-style-6.dark-skin:hover {
     margin-top: 10px;
     position: relative;
     padding-left: 22px;
-	color: #867e7e;
+	color: #ffffff;
 }
 
 .call-us a {
@@ -2803,7 +2806,7 @@ a.btn-style-6.dark-skin:hover {
     margin-top: 10px;
     position: relative;
     padding-left: 22px;
-	color: #867e7e;
+	color: #ffffff;
 }
 
 .fax a {
@@ -2838,7 +2841,7 @@ a.btn-style-6.dark-skin:hover {
 
 .copyright {
     font-size: 14px;
-    color: #000000;
+    color: #ffffff;
     padding-top: 5px;
 }
 

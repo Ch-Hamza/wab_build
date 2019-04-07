@@ -76,7 +76,7 @@
                   <div *ngIf="f.submitted && firstName.invalid" class="invalid-feedback">
                     <div *ngIf="firstName.errors.required" style="color:#ed1c24">ce champ est obligatoire</div>
                   </div>
-                </div>
+                </div><br>
                 <div class="form-group">
                   <label for="lastName">Nom</label>
                   <input type="text" class="form-control" name="lastName" [(ngModel)]="model.lastName" #lastName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && lastName.invalid }"
@@ -84,7 +84,7 @@
                   <div *ngIf="f.submitted && lastName.invalid" class="invalid-feedback">
                     <div *ngIf="lastName.errors.required" style="color:#ed1c24">ce champ est obligatoire</div>
                   </div>
-                </div>
+                </div><br>
                 <div class="form-group">
                   <label for="phone">Téléphone</label>
                   <input type="text" class="form-control" name="phone" [(ngModel)]="model.phone" #phone="ngModel" [ngClass]="{ 'is-invalid': f.submitted && phone.invalid }"
@@ -92,7 +92,7 @@
                   <div *ngIf="f.submitted && phone.invalid" class="invalid-feedback">
                     <div *ngIf="phone.errors.required" style="color:#ed1c24">ce champ est obligatoire</div>
                   </div>
-                </div>
+                </div><br>
                 <div class="form-group">
                   <label for="email">Email</label>
                   <input type="text" class="form-control" name="email" [(ngModel)]="model.email" #email="ngModel" [ngClass]="{ 'is-invalid': f.submitted && email.invalid }"
@@ -101,7 +101,7 @@
                     <div *ngIf="email.errors.required" style="color:#ed1c24">Ce champ est obligatoire</div>
                     <div *ngIf="email.errors.email" style="color:#ed1c24">email invalide</div>
                   </div>
-                </div>
+                </div><br>
                 <div class="form-group">
                   <label for="subject">sujet</label>
                   <input type="subject" class="form-control" name="subject" [(ngModel)]="model.subject" #subject="ngModel" [ngClass]="{ 'is-invalid': f.submitted && subject.invalid }"
@@ -110,7 +110,7 @@
                     <div *ngIf="subject.errors.required" style="color:#ed1c24">ce champ est obligatoire</div>
                     <div *ngIf="subject.errors.maxlength" style="color:#ed1c24">le sujet ne peut pas depasser 50 caractères</div>
                   </div>
-                </div>
+                </div><br>
                 <div class="form-group">
                   <label for="subject">Message</label>
                   <textarea class="form-control " name="message" rows="3" placeholder="Exprimez-vous" [(ngModel)]="model.message" #message="ngModel"
@@ -118,21 +118,21 @@
                   <div *ngIf="f.submitted && message.invalid" class="invalid-feedback">
                     <div *ngIf="message.errors.required" style="color:#ed1c24">ce champ est obligatoire</div>
                   </div>
-                </div>
+                </div><br>
                 <div class="form-group">
                   <button type="submit" name="submit" value="Submit" id="submit_form" class="btn btn-danger btn-lg" style="padding-left:20px;padding-right:20px;background-color:#ed1c23d3">Envoyer</button>
                 </div>
-              </form><br><br>
+              </form>
             </div>
             <!--
               <div *ngif="test" class="alert alert-success">
                 <strong>Success!</strong> Indicates a successful or positive action.
               </div>
               -->
-<br>
+ 
             <h3 style="padding-left:50px;padding-top:30px" class="wew fadeInUp" data-wew-delay="0.2s"> 
               Ou bien suivez-nous sur :
-            </h3> <br>
+            </h3> 
             <div class="contact">
               <div class="information">
                 <div class="contact-icon" style="padding-left:200px">

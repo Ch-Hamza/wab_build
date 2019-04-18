@@ -65,7 +65,7 @@ export class PublicationComponent implements OnInit {
   ngOnInit() {
   }
   run(url) {
-    var URL = "http://localhost/fichier/" + url;
+    var URL = "http://www.hamzachebil.tn/fichier/" + url;
     window.open(URL, null);
   }
   getpub(i) {

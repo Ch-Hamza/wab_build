@@ -120,7 +120,7 @@ formOff(){
           params: new HttpParams(),
           headers:  headers
         };
-        this.Http.post(`http://localhost/Back/uploadImage.php`, formData, options)
+        this.Http.post('http://www.hamzachebil.tn/Back/uploadImage.php', formData, options)
             
             .subscribe(
                 data => console.log('success'),

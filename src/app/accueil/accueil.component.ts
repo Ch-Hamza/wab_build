@@ -23,7 +23,7 @@ export class AccueilComponent implements OnInit {
     app.EspaceAdmin = false;
 
 
-    this.dataserv.getData('http://localhost/Back/publication.php').subscribe( //url back 
+    this.dataserv.getData('http://www.hamzachebil.tn/Back/publication.php').subscribe( //url back 
       (data: any) => {
         var a = data.length;
         if (a < 5) {
@@ -71,7 +71,7 @@ export class AccueilComponent implements OnInit {
 
   }
   run(url) {
-    var URL = "http://localhost/fichier/" + url;
+    var URL = "http://www.hamzachebil.tn/fichier/" + url;
     window.open(URL, null);
   }
 }

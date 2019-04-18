@@ -117,7 +117,7 @@ export class ModifPublicationComponent implements OnInit {
                 params: new HttpParams(),
                 headers: headers
             };
-            this.Http.post(`http://localhost/Back/uploadPdf.php`, formData, options)
+            this.Http.post('http://www.hamzachebil.tn/Back/uploadPdf.php', formData, options)
 
                 .subscribe(
                     data => console.log('success'),
